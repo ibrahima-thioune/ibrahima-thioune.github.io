@@ -1,1 +1,77 @@
-Hello, welcome to my e-portfolio
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ibrahima Thioune - E-portfolio</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; background: #f4f6f8; color: #222; }
+    header { background: #1f3a5f; color: white; padding: 20px; text-align: center; }
+    nav { background: #2d5086; text-align: center; }
+    nav button { background: none; border: none; color: white; padding: 14px 18px; font-size: 16px; cursor: pointer; }
+    nav button:hover, nav button.active { background: #1f3a5f; }
+    section { display: none; max-width: 800px; margin: 30px auto; padding: 20px; background: white; border-radius: 8px; }
+    section.active { display: block; }
+    h2 { color: #1f3a5f; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Ibrahima Thioune</h1>
+    <p>Engineering student at ENSEEIHT, Toulouse</p>
+  </header>
+
+  <nav>
+    <button class="active" onclick="show('welcome', this)">Welcome</button>
+    <button onclick="show('courses', this)">Engineering courses</button>
+    <button onclick="show('civic', this)">Civic Engagement</button>
+    <button onclick="show('mobility', this)">Mobility</button>
+    <button onclick="show('careers', this)">Careers</button>
+    <button onclick="show('sports', this)">Sports and interests</button>
+  </nav>
+
+  <section id="welcome" class="active">
+    <h2>Welcome</h2>
+    <p>YOUR TEXT HERE: who you are, where you come from, your background and what you want to do.</p>
+  </section>
+
+  <section id="courses">
+    <h2>Engineering courses (projects)</h2>
+    <h3>PROJECT 1 TITLE</h3>
+    <p>YOUR TEXT HERE: what you did, the tools you used, what you learned.</p>
+    <h3>PROJECT 2 TITLE</h3>
+    <p>YOUR TEXT HERE.</p>
+  </section>
+
+  <section id="civic">
+    <h2>Civic Engagement</h2>
+    <p>YOUR TEXT HERE: association, volunteering or action for others, and what it taught you.</p>
+  </section>
+
+  <section id="mobility">
+    <h2>Mobility</h2>
+    <p>YOUR TEXT HERE: your journey from Senegal to France, studies abroad, what you discovered.</p>
+  </section>
+
+  <section id="careers">
+    <h2>Careers</h2>
+    <p>YOUR TEXT HERE: your career goals, internships, the jobs you aim for.</p>
+  </section>
+
+  <section id="sports">
+    <h2>Sports and interests</h2>
+    <p>YOUR TEXT HERE: your sports, hobbies and passions.</p>
+  </section>
+
+  <script>
+    function show(id, btn) {
+      document.querySelectorAll('section').forEach(s => s.classList.remove('active'));
+      document.querySelectorAll('nav button').forEach(b => b.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+      btn.classList.add('active');
+    }
+  </script>
+
+</body>
+</html>
