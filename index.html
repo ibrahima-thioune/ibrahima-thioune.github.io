@@ -1,16 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" translate="no">
 <head>
   <meta charset="UTF-8">
+  <meta name="google" content="notranslate">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ibrahima Thioune - E-portfolio</title>
+  <title>Ibrahima THIOUNE- E-portfolio</title>
   <style>
     body { font-family: Arial, sans-serif; margin: 0; background: #f4f6f8; color: #222; }
     header { background: #1f3a5f; color: white; padding: 20px; text-align: center; }
     nav { background: #2d5086; text-align: center; }
     nav button { background: none; border: none; color: white; padding: 14px 18px; font-size: 16px; cursor: pointer; }
     nav button:hover, nav button.active { background: #1f3a5f; }
-    section { display: none; max-width: 800px; margin: 30px auto; padding: 20px; background: white; border-radius: 8px; }
+    nav button.lang { border: 2px solid white; border-radius: 20px; padding: 6px 14px; margin-left: 20px; }
+    section { display: none; max-width: 800px; margin: 30px auto; padding: 20px; background: white; border-radius: 8px; line-height: 1.6; }
     section.active { display: block; }
     h2 { color: #1f3a5f; }
   </style>
@@ -18,58 +20,67 @@
 <body>
 
   <header>
-    <h1>Ibrahima Thioune</h1>
-    <p>Engineering student at ENSEEIHT, Toulouse</p>
+    <h1>Ibrahima THIOUNE</h1>
+    <p data-en="Engineering student at ENSEEIHT, Toulouse" data-fr="Élève ingénieur à l'ENSEEIHT, Toulouse">Engineering student at ENSEEIHT, Toulouse</p>
   </header>
 
   <nav>
-    <button class="active" onclick="show('welcome', this)">Welcome</button>
-    <button onclick="show('courses', this)">Engineering courses</button>
-    <button onclick="show('civic', this)">Civic Engagement</button>
-    <button onclick="show('mobility', this)">Mobility</button>
-    <button onclick="show('careers', this)">Careers</button>
-    <button onclick="show('sports', this)">Sports and interests</button>
+    <button class="active" onclick="show('welcome', this)" data-en="Welcome" data-fr="Accueil">Welcome</button>
+    <button onclick="show('courses', this)" data-en="Engineering courses" data-fr="Cours d'ingénierie">Engineering courses</button>
+    <button onclick="show('civic', this)" data-en="Civic Engagement" data-fr="Engagement citoyen">Civic Engagement</button>
+    <button onclick="show('mobility', this)" data-en="Mobility" data-fr="Mobilité">Mobility</button>
+    <button onclick="show('careers', this)" data-en="Careers" data-fr="Carrière">Careers</button>
+    <button onclick="show('sports', this)" data-en="Sports and interests" data-fr="Sports et centres d'intérêt">Sports and interests</button>
+    <button class="lang" id="langBtn" onclick="toggleLang()">FR</button>
   </nav>
 
   <section id="welcome" class="active">
-    <h2>Welcome</h2>
-    <p>Welcome! I am Ibrahima THIOUNE, a first-year engineering student in electronics, electrical energy and automation at ENSEEIHT in Toulouse. I earned my BTS in electrical engineering technology before joining the bachelor's degree in electronics, electrical energy and automation at the University of Toulouse. Passionate about electrical energy, I aim to become an engineer in this field. On this website, you will find my projects, my experiences and my interests. Feel free to contact me to discuss my background or my projects</p>
+    <h2 data-en="Welcome" data-fr="Bienvenue">Welcome</h2>
+    <p data-en="Welcome! I am Ibrahima THIOUNE, a first-year engineering student in electronics, electrical energy and automation at ENSEEIHT in Toulouse. I earned my BTS in electrical engineering technology before joining the bachelor's degree in electronics, electrical energy and automation at the University of Toulouse. Passionate about electrical energy, I aim to become an engineer in this field. On this website, you will find my projects, my experiences and my interests. Feel free to contact me to discuss my background or my projects." data-fr="Bienvenue ! Je suis Khalil, élève ingénieur en première année en électronique, énergie électrique et automatique à l'ENSEEIHT de Toulouse. J'ai obtenu mon BTS en électrotechnique avant d'intégrer la licence EEA (électronique, énergie électrique et automatique) à l'Université de Toulouse. Passionné par l'énergie électrique, je souhaite devenir ingénieur dans ce domaine. Sur ce site, vous trouverez mes projets, mes expériences et mes centres d'intérêt. N'hésitez pas à me contacter pour échanger sur mon parcours ou mes projets.">Welcome! I am Ibrahima THIOUNE, a first-year engineering student in electronics, electrical energy and automation at ENSEEIHT in Toulouse. I earned my BTS in electrical engineering technology before joining the bachelor's degree in electronics, electrical energy and automation at the University of Toulouse. Passionate about electrical energy, I aim to become an engineer in this field. On this website, you will find my projects, my experiences and my interests. Feel free to contact me to discuss my background or my projects.</p>
   </section>
 
   <section id="courses">
-    <h2>Engineering courses (projects)</h2>
-    <h3>PROJECT 1 TITLE</h3>
-    <p>YOUR TEXT HERE: what you did, the tools you used, what you learned.</p>
-    <h3>PROJECT 2 TITLE</h3>
-    <p>YOUR TEXT HERE.</p>
+    <h2 data-en="Engineering courses (projects)" data-fr="Cours d'ingénierie (projets)">Engineering courses (projects)</h2>
+    <p data-en="YOUR TEXT HERE in English." data-fr="VOTRE TEXTE ICI en français.">YOUR TEXT HERE in English.</p>
   </section>
 
   <section id="civic">
-    <h2>Civic Engagement</h2>
-    <p>YOUR TEXT HERE: association, volunteering or action for others, and what it taught you.</p>
+    <h2 data-en="Civic Engagement" data-fr="Engagement citoyen">Civic Engagement</h2>
+    <p data-en="YOUR TEXT HERE in English." data-fr="VOTRE TEXTE ICI en français.">YOUR TEXT HERE in English.</p>
   </section>
 
   <section id="mobility">
-    <h2>Mobility</h2>
-    <p>YOUR TEXT HERE: your journey from Senegal to France, studies abroad, what you discovered.</p>
+    <h2 data-en="Mobility" data-fr="Mobilité">Mobility</h2>
+    <p data-en="YOUR TEXT HERE in English." data-fr="VOTRE TEXTE ICI en français.">YOUR TEXT HERE in English.</p>
   </section>
 
   <section id="careers">
-    <h2>Careers</h2>
-    <p>YOUR TEXT HERE: your career goals, internships, the jobs you aim for.</p>
+    <h2 data-en="Careers" data-fr="Carrière">Careers</h2>
+    <p data-en="YOUR TEXT HERE in English." data-fr="VOTRE TEXTE ICI en français.">YOUR TEXT HERE in English.</p>
   </section>
 
   <section id="sports">
-    <h2>Sports and interests</h2>
-    <p>YOUR TEXT HERE: your sports, hobbies and passions.</p>
+    <h2 data-en="Sports and interests" data-fr="Sports et centres d'intérêt">Sports and interests</h2>
+    <p data-en="YOUR TEXT HERE in English." data-fr="VOTRE TEXTE ICI en français.">YOUR TEXT HERE in English.</p>
   </section>
 
   <script>
+    var currentLang = 'en';
+
     function show(id, btn) {
-      document.querySelectorAll('section').forEach(s => s.classList.remove('active'));
-      document.querySelectorAll('nav button').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('section').forEach(function (s) { s.classList.remove('active'); });
+      document.querySelectorAll('nav button').forEach(function (b) { b.classList.remove('active'); });
       document.getElementById(id).classList.add('active');
       btn.classList.add('active');
+    }
+
+    function toggleLang() {
+      currentLang = (currentLang === 'en') ? 'fr' : 'en';
+      document.documentElement.lang = currentLang;
+      document.querySelectorAll('[data-en]').forEach(function (el) {
+        el.textContent = el.getAttribute('data-' + currentLang);
+      });
+      document.getElementById('langBtn').textContent = (currentLang === 'en') ? 'FR' : 'EN';
     }
   </script>
 
