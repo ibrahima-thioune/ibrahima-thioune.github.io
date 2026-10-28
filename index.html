@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en" translate="no">
 <head>
@@ -11,16 +12,53 @@
     nav { background: #2d5086; text-align: center; }
     nav button { background: none; border: none; color: white; padding: 14px 18px; font-size: 16px; cursor: pointer; }
     nav button:hover, nav button.active { background: #1f3a5f; }
-    nav button.lang { border: 2px solid white; border-radius: 20px; padding: 6px 14px; margin-left: 20px; }
-    section { display: none; max-width: 900px; margin: 30px auto; padding: 20px; background: white; border-radius: 8px; line-height: 1.6; }
+
+    /* Bouton de changement de langue en rouge */
+    nav button.lang {
+      background: #d62828;
+      color: white;
+      border: 2px solid #d62828;
+      border-radius: 20px;
+      padding: 6px 14px;
+      margin-left: 20px;
+    }
+    nav button.lang:hover {
+      background: #a4161a;
+      border-color: #a4161a;
+    }
+
+    /* Emplacement des images à droite du projet */
+    .project-images {
+      float: right;
+      width: 260px;
+      max-width: 40%;
+      margin: 0 0 18px 22px;
+    }
+    .project-images img {
+      display: block;
+      width: 100%;
+      height: auto;
+      margin-bottom: 12px;
+      border-radius: 8px;
+    }
+
+    section { display: none; max-width: 800px; margin: 30px auto; padding: 20px; background: white; border-radius: 8px; line-height: 1.6; }
     section.active { display: block; }
     h2 { color: #1f3a5f; }
-    h3 { color: #2d5086; }
-    .project { display: flex; gap: 20px; align-items: flex-start; margin-bottom: 30px; }
-    .project .text { flex: 1; }
-    .project img { width: 280px; max-width: 40%; border-radius: 8px; }
-    .meta { color: #555; font-size: 14px; }
-    @media (max-width: 600px) { .project { flex-direction: column; } .project img { max-width: 100%; width: 100%; } }
+    h3 { color: #2d5086; margin-top: 28px; }
+    .skills { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 24px; margin-top: 10px; }
+    .skills h4 { color: #6b7280; font-size: 14px; border-bottom: 1px solid #ddd; padding-bottom: 6px; margin: 0 0 10px; }
+    .skills ul { list-style: none; padding: 0; margin: 0; }
+    .skills li { padding: 6px 0; }
+
+    @media (max-width: 600px) {
+      .project-images {
+        float: none;
+        width: 100%;
+        max-width: 100%;
+        margin: 12px 0;
+      }
+    }
   </style>
 </head>
 <body>
@@ -37,54 +75,82 @@
     <button onclick="show('mobility', this)" data-en="Mobility" data-fr="Mobilité">Mobility</button>
     <button onclick="show('careers', this)" data-en="Careers" data-fr="Carrière">Careers</button>
     <button onclick="show('sports', this)" data-en="Sports and interests" data-fr="Sports et centres d'intérêt">Sports and interests</button>
-    <button onclick="show('contact', this)" data-en="Contact" data-fr="Contact">Contact</button>
     <button class="lang" id="langBtn" onclick="toggleLang()">FR</button>
   </nav>
 
   <section id="welcome" class="active">
     <h2 data-en="Welcome" data-fr="Accueil">Welcome</h2>
-    <p data-en="I am Ibrahima Thioune, a first-year engineering student specializing in Electronics, Electrical Energy, and Automatic Control at ENSEEIHT in Toulouse." data-fr="Je suis Ibrahima Thioune, élève ingénieur en première année en électronique, énergie électrique et automatique à l'ENSEEIHT de Toulouse.">I am Ibrahima Thioune, a first-year engineering student specializing in Electronics, Electrical Energy, and Automatic Control at ENSEEIHT in Toulouse.</p>
-    <p data-en="After earning a Higher National Diploma (BTS) in Electrical Engineering, I pursued a bachelor's degree in Electronics, Electrical Energy, and Automatic Control at the University of Toulouse." data-fr="J'ai obtenu un BTS en électrotechnique avant d'intégrer la licence électronique, énergie électrique et automatique à l'Université de Toulouse.">After earning a Higher National Diploma (BTS) in Electrical Engineering, I pursued a bachelor's degree in Electronics, Electrical Energy, and Automatic Control at the University of Toulouse.</p>
-    <p data-en="Passionate about electrical energy, I aspire to become an electrical and energy systems engineer, specializing in the design and control of sustainable industrial systems." data-fr="L'énergie électrique me passionne, et je veux devenir ingénieur en systèmes électriques et énergétiques, avec une spécialisation dans la conception et la commande de systèmes industriels durables.">Passionate about electrical energy, I aspire to become an electrical and energy systems engineer, specializing in the design and control of sustainable industrial systems.</p>
-    <p data-en="This website showcases my academic projects, experiences, and interests. Feel free to contact me to learn more about my background or discuss my projects." data-fr="Ce site présente mes projets académiques, mes expériences et mes centres d'intérêt. Vous pouvez me contacter pour en savoir plus sur mon parcours ou échanger sur mes projets.">This website showcases my academic projects, experiences, and interests. Feel free to contact me to learn more about my background or discuss my projects.</p>
+    <p data-en="I am Ibrahima Thioune, a first-year engineering student in electronics, electrical energy and automatic control at ENSEEIHT in Toulouse. I earned a BTS in electrical engineering before joining the bachelor's degree in electronics, electrical energy and automatic control at the University of Toulouse. I am passionate about electrical energy, and I want to become an engineer in electrical and energy systems, specializing in the design and control of sustainable industrial systems." data-fr="Je suis Ibrahima Thioune, élève ingénieur en première année en électronique, énergie électrique et automatique à l'ENSEEIHT de Toulouse. J'ai obtenu un BTS en électrotechnique avant d'intégrer la licence électronique, énergie électrique et automatique à l'Université de Toulouse. L'énergie électrique me passionne, et je veux devenir ingénieur en systèmes électriques et énergétiques, avec une spécialisation dans la conception et la commande de systèmes industriels durables.">I am Ibrahima Thioune, a first-year engineering student in electronics, electrical energy and automatic control at ENSEEIHT in Toulouse. I earned a BTS in electrical engineering before joining the bachelor's degree in electronics, electrical energy and automatic control at the University of Toulouse. I am passionate about electrical energy, and I want to become an engineer in electrical and energy systems, specializing in the design and control of sustainable industrial systems.</p>
+    <p data-en="This website presents my projects, my experiences and my interests. Feel free to contact me to discuss them." data-fr="Ce site présente mes projets, mes expériences et mes centres d'intérêt. Vous pouvez me contacter pour échanger.">This website presents my projects, my experiences and my interests. Feel free to contact me to discuss them.</p>
   </section>
 
   <section id="courses">
-    <h2 data-en="Engineering courses (projects)" data-fr="Cours d'ingénierie (projets)">Engineering courses (projects)</h2>
+    <h2 data-en="projects and skills" data-fr="projets et competences">projects and skills</h2>
 
-    <div class="project">
-      <div class="text">
-        <h3 data-en="Connected beehive" data-fr="Ruche connectée">Connected beehive</h3>
-        <p class="meta" data-en="3rd-year bachelor's degree in EEA, University of Toulouse, January to June 2026. Project carried out with two other students." data-fr="Licence 3 EEA, Université de Toulouse, janvier à juin 2026. Projet réalisé avec deux autres étudiants.">3rd-year bachelor's degree in EEA, University of Toulouse, January to June 2026. Project carried out with two other students.</p>
-        <p><strong data-en="Goal:" data-fr="But :">Goal:</strong> <span data-en="To design a connected beehive that remotely measures temperature, humidity and weight, and runs autonomously on solar energy." data-fr="Concevoir une ruche connectée qui mesure à distance la température, l'humidité et le poids, de façon autonome grâce à l'énergie solaire.">To design a connected beehive that remotely measures temperature, humidity and weight, and runs autonomously on solar energy.</span></p>
-        <p><strong data-en="Problem:" data-fr="Problème :">Problem:</strong> <span data-en="The GPS module did not receive enough satellite signals to give a reliable position." data-fr="Le module GPS ne recevait pas assez de signaux satellites pour donner une position fiable.">The GPS module did not receive enough satellite signals to give a reliable position.</span></p>
-        <p><strong data-en="Solution:" data-fr="Solution :">Solution:</strong> <span data-en="Due to lack of time, we collected position data with an external GPS, recorded on a phone." data-fr="Faute de temps, nous avons collecté les données de position avec un GPS externe, enregistrées sur un téléphone.">Due to lack of time, we collected position data with an external GPS, recorded on a phone.</span></p>
-      </div>
-      <img src="ruche.jpg.jpeg" alt="Connected beehive" onerror="this.style.display='none'">
+    <h3 data-en="Study of a Connected Beehive – 3rd-Year Bachelor's Project (EEA)" data-fr="Étude d'une ruche connectée – Projet L3 EEA">Study of a Connected Beehive – 3rd-Year Bachelor's Project (EEA)</h3>
+
+    <!-- Ajoute tes propres photos dans le dossier images -->
+    <div class="project-images">
+      <img src="images/ruche-mesures.jpeg" alt="Connected beehive measurement system">
+      <img src="images/ruche-solaire.jpeg" alt="Beehive equipped with a solar panel">
     </div>
 
-    <div class="project">
-      <div class="text">
-        <h3 data-en="Photovoltaic system for a medicine refrigerator in an isolated area" data-fr="Système photovoltaïque pour un réfrigérateur de médicaments en site isolé">Photovoltaic system for a medicine refrigerator in an isolated area</h3>
-        <p class="meta" data-en="Final-year thesis, BTS in electrical engineering technology, CEDT Le G15, Senegal, 2023-2025." data-fr="Mémoire de fin d'études, BTS en électrotechnique, CEDT Le G15, Sénégal, 2023-2025.">Final-year thesis, BTS in electrical engineering technology, CEDT Le G15, Senegal, 2023-2025.</p>
-        <p><strong data-en="Goal:" data-fr="But :">Goal:</strong> <span data-en="To design a standalone photovoltaic system able to power a medical refrigerator reliably and continuously, to preserve the cold chain for medicines even without a power grid." data-fr="Concevoir un système photovoltaïque autonome capable d'alimenter un réfrigérateur médical de façon fiable et continue, pour préserver la chaîne du froid des médicaments, même sans réseau électrique.">To design a standalone photovoltaic system able to power a medical refrigerator reliably and continuously, to preserve the cold chain for medicines even without a power grid.</span></p>
-        <p><strong data-en="Problem:" data-fr="Problème :">Problem:</strong> <span data-en="In isolated areas, access to electricity remains a major challenge and compromises the storage of temperature-sensitive medicines." data-fr="Dans les zones isolées, l'accès à l'électricité reste un défi majeur et compromet la conservation des médicaments sensibles à la température.">In isolated areas, access to electricity remains a major challenge and compromises the storage of temperature-sensitive medicines.</span></p>
-        <p><strong data-en="Solution:" data-fr="Solution :">Solution:</strong> <span data-en="I sized the system from the refrigerator's consumption (0.35 kWh per day, about 500 Wh per day with 30% losses). With 5 peak sun hours in Senegal, at least 100 Wp are needed; I chose 150 Wp for margin. I then built a prototype with a solar panel on a metal frame, a charge controller, a battery and an inverter." data-fr="J'ai dimensionné le système à partir de la consommation du réfrigérateur (0,35 kWh par jour, soit environ 500 Wh par jour avec 30 % de pertes). Avec 5 heures de plein soleil au Sénégal, il faut au moins 100 Wc ; j'ai retenu 150 Wc pour garder de la marge. J'ai ensuite réalisé un prototype avec un panneau solaire sur un support métallique, un régulateur de charge, une batterie et un onduleur.">I sized the system from the refrigerator's consumption (0.35 kWh per day, about 500 Wh per day with 30% losses). With 5 peak sun hours in Senegal, at least 100 Wp are needed; I chose 150 Wp for margin. I then built a prototype with a solar panel on a metal frame, a charge controller, a battery and an inverter.</span></p>
-      </div>
-      <img src="photovoltaique.jpeg" alt="Photovoltaic system prototype" onerror="this.style.display='none'">
-    </div>
+    <p style="font-style: italic;" data-en="University of Toulouse, January – June 2026. Team project (3 students)." data-fr="Université de Toulouse, janvier – juin 2026. Projet réalisé en équipe de trois.">University of Toulouse, January – June 2026. Team project (3 students).</p>
+    <p data-en="We designed and validated a connected beehive prototype that remotely measures the hive's temperature, humidity and weight. The system is based on an Arduino Uno board, two temperature and humidity sensors (DHT11 outside, SHT31 inside), an HX711 weighing module, and Bluetooth data transmission to a phone." data-fr="Nous avons conçu et validé un prototype de ruche connectée, capable de mesurer à distance la température, l'humidité et le poids de la ruche. Le système repose sur une carte Arduino Uno, deux capteurs de température et d'humidité (DHT11 à l'extérieur, SHT31 à l'intérieur), un module de pesée HX711 et une transmission des données par Bluetooth vers un téléphone.">We designed and validated a connected beehive prototype that remotely measures the hive's temperature, humidity and weight. The system is based on an Arduino Uno board, two temperature and humidity sensors (DHT11 outside, SHT31 inside), an HX711 weighing module, and Bluetooth data transmission to a phone.</p>
+    <p data-en="We checked the communication protocols (One Wire, I2C, UART) using a PicoScope oscilloscope. A GPS was used to collect position data. Finally, we sized the solar power supply: a 5 W panel and a 20 Ah lithium-ion battery, for a theoretical autonomy of 5 days." data-fr="Nous avons vérifié les protocoles de communication (One Wire, I2C, UART) à l'aide d'un oscilloscope PicoScope. Un GPS a servi à collecter des données de position. Nous avons enfin dimensionné l'alimentation solaire : un panneau de 5 W et une batterie lithium-ion de 20 Ah, pour une autonomie théorique de 5 jours.">We checked the communication protocols (One Wire, I2C, UART) using a PicoScope oscilloscope. A GPS was used to collect position data. Finally, we sized the solar power supply: a 5 W panel and a 20 Ah lithium-ion battery, for a theoretical autonomy of 5 days.</p>
+    <p data-en="This project taught me how to program sensors, analyze signals, and size an energy-autonomous system." data-fr="Ce projet m'a appris à programmer des capteurs, à analyser des signaux et à dimensionner un système autonome en énergie.">This project taught me how to program sensors, analyze signals, and size an energy-autonomous system.</p>
 
-    <h3 data-en="Technical skills" data-fr="Compétences techniques">Technical skills</h3>
+    <h3 data-en="Autonomous Photovoltaic System for a Medicine Refrigerator – BTS Project" data-fr="Système photovoltaïque autonome pour un réfrigérateur de médicaments – Projet BTS">Autonomous Photovoltaic System for a Medicine Refrigerator – BTS Project</h3>
+    <p data-en="Objective: to design an autonomous photovoltaic system able to power a medical refrigerator reliably and continuously, in order to preserve the cold chain of medicines in isolated areas without a power grid." data-fr="Objectif : concevoir un système photovoltaïque autonome capable d'alimenter un réfrigérateur médical de façon fiable et continue, afin de préserver la chaîne du froid des médicaments dans les zones isolées sans réseau électrique.">Objective: to design an autonomous photovoltaic system able to power a medical refrigerator reliably and continuously, in order to preserve the cold chain of medicines in isolated areas without a power grid.</p>
+    <p data-en="I sized the system from the refrigerator's consumption (70 W), then built and tested a prototype made of a solar panel, a charge controller, a battery and an inverter." data-fr="J'ai dimensionné le système à partir de la consommation du réfrigérateur (70 W), puis réalisé et testé un prototype composé d'un panneau solaire, d'un régulateur de charge, d'une batterie et d'un onduleur.">I sized the system from the refrigerator's consumption (70 W), then built and tested a prototype made of a solar panel, a charge controller, a battery and an inverter.</p>
+
+    <h3 data-en="Skills" data-fr="Compétences">Skills</h3>
     <ul>
-      <li data-en="Industrial automation: design and programming in Ladder and FBD" data-fr="Automatismes industriels : conception et programmation en Ladder et FBD">Industrial automation: design and programming in Ladder and FBD</li>
-      <li data-en="Modeling and simulation with MATLAB and Simulink" data-fr="Modélisation et simulation sous MATLAB et Simulink">Modeling and simulation with MATLAB and Simulink</li>
+      <li data-en="Industrial automation: design and programming in Ladder (LD) and FBD, study and analysis of specifications" data-fr="Automatismes industriels : conception et programmation en Ladder (LD) et FBD, étude et analyse des cahiers des charges">Industrial automation: design and programming in Ladder (LD) and FBD, study and analysis of specifications</li>
+      <li data-en="Modeling and simulation: development of models in MATLAB/Simulink" data-fr="Modélisation et simulation : développement de modèles sous MATLAB/Simulink">Modeling and simulation: development of models in MATLAB/Simulink</li>
       <li data-en="Control systems: time and frequency analysis (transfer functions, Bode, stability)" data-fr="Commande des systèmes : analyse temporelle et fréquentielle (fonctions de transfert, Bode, stabilité)">Control systems: time and frequency analysis (transfer functions, Bode, stability)</li>
-      <li data-en="Electronics: circuit simulation with Proteus and LTspice" data-fr="Électronique : simulation de circuits avec Proteus et LTspice">Electronics: circuit simulation with Proteus and LTspice</li>
-      <li data-en="C programming: PIC microcontrollers (MPLAB) and Arduino" data-fr="Programmation en langage C : microcontrôleurs PIC (MPLAB) et Arduino">C programming: PIC microcontrollers (MPLAB) and Arduino</li>
-      <li data-en="Assembly language" data-fr="Assembleur">Assembly language</li>
-      <li data-en="Maintenance and troubleshooting of electrotechnical equipment" data-fr="Maintenance et dépannage d'équipements électrotechniques">Maintenance and troubleshooting of electrotechnical equipment</li>
-      <li data-en="Measuring instruments: multimeter, clamp meter, PicoScope oscilloscope" data-fr="Appareils de mesure : multimètre, pince ampèremétrique, oscilloscope PicoScope">Measuring instruments: multimeter, clamp meter, PicoScope oscilloscope</li>
+      <li data-en="Electronics: simulation of circuits and embedded systems with Proteus and LTspice" data-fr="Électronique : simulation de circuits et de systèmes embarqués avec Proteus et LTspice">Electronics: simulation of circuits and embedded systems with Proteus and LTspice</li>
+      <li data-en="Microcontrollers: programming of PIC microcontrollers with MPLAB (C / Assembly)" data-fr="Microcontrôleurs : programmation de PIC sous MPLAB (C / Assembleur)">Microcontrollers: programming of PIC microcontrollers with MPLAB (C / Assembly)</li>
+      <li data-en="Maintenance and troubleshooting of electrical equipment" data-fr="Maintenance et dépannage d'équipements électrotechniques">Maintenance and troubleshooting of electrical equipment</li>
+      <li data-en="Use of measuring instruments (multimeter, clamp meter, ammeter)" data-fr="Utilisation d'appareils de mesure (multimètre, pince, ampèremètre)">Use of measuring instruments (multimeter, clamp meter, ammeter)</li>
     </ul>
+
+    <h3 data-en="Software, tools and languages" data-fr="Logiciels, outils">Software, tools </h3>
+    <div class="skills">
+      <div>
+        <h4 data-en="Software" data-fr="Logiciels">Software</h4>
+        <ul>
+          <li>Proteus</li>
+          <li>Zelio Soft</li>
+          <li>LTspice</li>
+          <li>MATLAB / Simulink</li>
+          <li>MPLAB</li>
+  
+        </ul>
+      </div>
+      <div>
+        <h4 data-en="Hardware" data-fr="Matériel">Hardware</h4>
+        <ul>
+          <li>Arduino</li>
+          <li>PicoScope</li>
+          <li data-en="Multimeter, clamp meter" data-fr="Multimètre, pince">Multimeter, clamp meter</li>
+        </ul>
+      </div>
+      <div>
+        <h4 data-en="Office tools" data-fr="Outils bureautiques">Office tools</h4>
+        <ul>
+          <li>Word</li>
+          <li>Excel</li>
+          <li>Canva</li>
+          <li>PowerPoint</li>
+        </ul>
+      </div>
+      <div>
+       
+          
+        </ul>
+      </div>
+    </div>
   </section>
 
   <section id="civic">
@@ -104,16 +170,12 @@
 
   <section id="sports">
     <h2 data-en="Sports and interests" data-fr="Sports et centres d'intérêt">Sports and interests</h2>
-    <p data-en="YOUR TEXT HERE in English." data-fr="VOTRE TEXTE ICI en français.">YOUR TEXT HERE in English.</p>
-  </section>
-
-  <section id="contact">
-    <h2 data-en="Contact" data-fr="Contact">Contact</h2>
-    <p data-en="Feel free to contact me to discuss my background or my projects." data-fr="N'hésitez pas à me contacter pour échanger sur mon parcours ou mes projets.">Feel free to contact me to discuss my background or my projects.</p>
+    <p data-en="Outside my studies, here is what I enjoy:" data-fr="En dehors de mes études, voici ce que j'aime :">Outside my studies, here is what I enjoy:</p>
     <ul>
-      <li>Email : <a href="mailto:TON.EMAIL@exemple.com">TON.EMAIL@exemple.com</a></li>
-      <li>LinkedIn : <a href="TON-LIEN-LINKEDIN">TON-LIEN-LINKEDIN</a></li>
-      <li>GitHub : <a href="https://github.com/ibrahima-thioune">github.com/ibrahima-thioune</a></li>
+      <li data-en="Sport" data-fr="Sport">Sport</li>
+      <li data-en="Travel" data-fr="Voyage">Travel</li>
+      <li data-en="Reading" data-fr="Lecture">Reading</li>
+      <li data-en="Televised debates" data-fr="Débats télévisés">Televised debates</li>
     </ul>
   </section>
 
