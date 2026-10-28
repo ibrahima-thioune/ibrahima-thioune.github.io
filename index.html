@@ -20,6 +20,10 @@
     .skills h4 { color: #6b7280; font-size: 14px; border-bottom: 1px solid #ddd; padding-bottom: 6px; margin: 0 0 10px; }
     .skills ul { list-style: none; padding: 0; margin: 0; }
     .skills li { padding: 6px 0; }
+    .project { display: flex; gap: 20px; align-items: flex-start; margin-bottom: 30px; }
+.project .text { flex: 1; }
+.project img { width: 280px; max-width: 40%; border-radius: 8px; }
+@media (max-width: 600px) { .project { flex-direction: column; } .project img { max-width: 100%; width: 100%; } }
   </style>
 </head>
 <body>
@@ -47,16 +51,21 @@
 
   <section id="courses">
     <h2 data-en="projects and skills" data-fr="projets et competences">projects and skills</h2>
-
+    
+     <div class="project">
+    <div class="text">
     <h3 data-en="Study of a Connected Beehive – 3rd-Year Bachelor's Project (EEA)" data-fr="Étude d'une ruche connectée – Projet L3 EEA">Study of a Connected Beehive – 3rd-Year Bachelor's Project (EEA)</h3>
     <p style="font-style: italic;" data-en="University of Toulouse, January – June 2026. Team project (3 students)." data-fr="Université de Toulouse, janvier – juin 2026. Projet réalisé en équipe de trois.">University of Toulouse, January – June 2026. Team project (3 students).</p>
     <p data-en="We designed and validated a connected beehive prototype that remotely measures the hive's temperature, humidity and weight. The system is based on an Arduino Uno board, two temperature and humidity sensors (DHT11 outside, SHT31 inside), an HX711 weighing module, and Bluetooth data transmission to a phone." data-fr="Nous avons conçu et validé un prototype de ruche connectée, capable de mesurer à distance la température, l'humidité et le poids de la ruche. Le système repose sur une carte Arduino Uno, deux capteurs de température et d'humidité (DHT11 à l'extérieur, SHT31 à l'intérieur), un module de pesée HX711 et une transmission des données par Bluetooth vers un téléphone.">We designed and validated a connected beehive prototype that remotely measures the hive's temperature, humidity and weight. The system is based on an Arduino Uno board, two temperature and humidity sensors (DHT11 outside, SHT31 inside), an HX711 weighing module, and Bluetooth data transmission to a phone.</p>
     <p data-en="We checked the communication protocols (One Wire, I2C, UART) using a PicoScope oscilloscope. A GPS was used to collect position data. Finally, we sized the solar power supply: a 5 W panel and a 20 Ah lithium-ion battery, for a theoretical autonomy of 5 days." data-fr="Nous avons vérifié les protocoles de communication (One Wire, I2C, UART) à l'aide d'un oscilloscope PicoScope. Un GPS a servi à collecter des données de position. Nous avons enfin dimensionné l'alimentation solaire : un panneau de 5 W et une batterie lithium-ion de 20 Ah, pour une autonomie théorique de 5 jours.">We checked the communication protocols (One Wire, I2C, UART) using a PicoScope oscilloscope. A GPS was used to collect position data. Finally, we sized the solar power supply: a 5 W panel and a 20 Ah lithium-ion battery, for a theoretical autonomy of 5 days.</p>
     <p data-en="This project taught me how to program sensors, analyze signals, and size an energy-autonomous system." data-fr="Ce projet m'a appris à programmer des capteurs, à analyser des signaux et à dimensionner un système autonome en énergie.">This project taught me how to program sensors, analyze signals, and size an energy-autonomous system.</p>
-
+     <img src="ruche.jpg" alt="Connected beehive" onerror="this.style.display='none'">
     <h3 data-en="Autonomous Photovoltaic System for a Medicine Refrigerator – BTS Project" data-fr="Système photovoltaïque autonome pour un réfrigérateur de médicaments – Projet BTS">Autonomous Photovoltaic System for a Medicine Refrigerator – BTS Project</h3>
     <p data-en="Objective: to design an autonomous photovoltaic system able to power a medical refrigerator reliably and continuously, in order to preserve the cold chain of medicines in isolated areas without a power grid." data-fr="Objectif : concevoir un système photovoltaïque autonome capable d'alimenter un réfrigérateur médical de façon fiable et continue, afin de préserver la chaîne du froid des médicaments dans les zones isolées sans réseau électrique.">Objective: to design an autonomous photovoltaic system able to power a medical refrigerator reliably and continuously, in order to preserve the cold chain of medicines in isolated areas without a power grid.</p>
     <p data-en="I sized the system from the refrigerator's consumption (70 W), then built and tested a prototype made of a solar panel, a charge controller, a battery and an inverter." data-fr="J'ai dimensionné le système à partir de la consommation du réfrigérateur (70 W), puis réalisé et testé un prototype composé d'un panneau solaire, d'un régulateur de charge, d'une batterie et d'un onduleur.">I sized the system from the refrigerator's consumption (70 W), then built and tested a prototype made of a solar panel, a charge controller, a battery and an inverter.</p>
+      </div>
+  <img src="photovoltaique.jpg" alt="Photovoltaic system prototype" onerror="this.style.display='none'">  
+</div>
 
     <h3 data-en="Skills" data-fr="Compétences">Skills</h3>
     <ul>
