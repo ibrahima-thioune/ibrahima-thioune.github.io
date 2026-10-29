@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -13,9 +14,7 @@
   --bg: #f4f6f8;
 }
 
-* {
-  box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
 body {
   font-family: Arial, sans-serif;
@@ -32,9 +31,7 @@ header {
   padding: 24px 16px;
 }
 
-header h1 {
-  margin: 0 0 6px;
-}
+header h1 { margin: 0 0 6px; }
 
 nav {
   background: var(--blue);
@@ -68,9 +65,7 @@ nav button.lang {
   margin: 4px 8px;
 }
 
-main {
-  padding: 1px 16px 28px;
-}
+main { padding: 1px 16px 28px; }
 
 section {
   display: none;
@@ -82,9 +77,7 @@ section {
   box-shadow: 0 2px 12px #0000000c;
 }
 
-section.active {
-  display: block;
-}
+section.active { display: block; }
 
 h2 {
   color: var(--navy);
@@ -95,6 +88,8 @@ h3 {
   color: var(--blue);
   margin-top: 25px;
 }
+
+p { margin: 10px 0 14px; }
 
 .profile-intro {
   display: flex;
@@ -114,10 +109,8 @@ h3 {
   flex-shrink: 0;
 }
 
-.profile-text {
-  flex: 1;
-  min-width: 230px;
-}
+.profile-text { flex: 1; min-width: 230px; }
+.profile-text h3 { margin-top: 0; }
 
 .project {
   display: flow-root;
@@ -142,10 +135,29 @@ h3 {
   border-radius: 8px;
 }
 
+.skills {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: 20px;
+  margin-top: 10px;
+}
+
+.skills h4 {
+  color: #6b7280;
+  font-size: 14px;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 6px;
+  margin: 0 0 10px;
+}
+
+ul { padding-left: 22px; }
+
 .activity {
   padding: 12px 0;
   border-bottom: 1px solid #eee;
 }
+
+.activity:last-child { border-bottom: 0; }
 
 .activity img {
   max-width: 260px;
@@ -153,6 +165,12 @@ h3 {
   height: auto;
   border-radius: 8px;
   margin: 8px 16px 8px 0;
+}
+
+.links a {
+  display: inline-block;
+  margin: 5px 10px 5px 0;
+  color: var(--blue);
 }
 
 #snakeCanvas {
@@ -166,10 +184,7 @@ h3 {
   margin: 12px 0;
 }
 
-.note {
-  font-size: 0.92rem;
-  color: #555;
-}
+.note { font-size: .92rem; color: #555; }
 
 footer {
   text-align: center;
@@ -213,195 +228,692 @@ footer {
 
 <header>
   <h1>Ibrahima Thioune</h1>
-  <p>Élève ingénieur à l’ENSEEIHT de Toulouse</p>
+  <p data-en="Engineering student at ENSEEIHT, Toulouse"
+     data-fr="Élève ingénieur à l’ENSEEIHT de Toulouse">
+    Élève ingénieur à l’ENSEEIHT de Toulouse
+  </p>
 </header>
 
 <nav aria-label="Navigation principale">
-  <button class="active"
-    onclick="showSection('welcome', this)">
-    Accueil
-  </button>
+  <button class="active" onclick="showSection('welcome', this)"
+    data-en="Welcome" data-fr="Accueil">Accueil</button>
 
-  <button onclick="showSection('projects', this)">
+  <button onclick="showSection('projects', this)"
+    data-en="Engineering projects" data-fr="Projets d’ingénierie">
     Projets d’ingénierie
   </button>
 
-  <button onclick="showSection('careers', this)">
-    Carrière
-  </button>
+  <button onclick="showSection('careers', this)"
+    data-en="Career" data-fr="Carrière">Carrière</button>
 
-  <button onclick="showSection('mobility', this)">
+  <button onclick="showSection('mobility', this)"
+    data-en="International mobility" data-fr="Mobilité internationale">
     Mobilité internationale
   </button>
 
-  <button onclick="showSection('civic', this)">
+  <button onclick="showSection('civic', this)"
+    data-en="Civic engagement" data-fr="Engagement citoyen">
     Engagement citoyen
   </button>
 
-  <button onclick="showSection('sports', this)">
+  <button onclick="showSection('sports', this)"
+    data-en="Sports and other activities"
+    data-fr="Sports et autres activités">
     Sports et autres activités
   </button>
 
-  <button onclick="showSection('contact', this)">
+  <button onclick="showSection('contact', this)"
+    data-en="CV & Contact" data-fr="CV et contact">
     CV et contact
   </button>
 
-  <button class="lang" id="langBtn" onclick="toggleLang()">
-    EN
-  </button>
+  <button class="lang" id="langBtn" onclick="toggleLang()">EN</button>
 </nav>
 
 <main>
 
 <!-- ACCUEIL -->
 <section id="welcome" class="active">
-  <h2>Accueil</h2>
+  <h2 data-en="Welcome" data-fr="Accueil">Accueil</h2>
 
   <div class="profile-intro">
-    <img
-      class="profile-photo"
+    <img class="profile-photo"
       src="./portrait.jpg"
-      alt="Portrait d’Ibrahima Thioune"
-    >
+      alt="Portrait d’Ibrahima Thioune">
 
     <div class="profile-text">
       <h3>Ibrahima Thioune</h3>
 
-      <p>
-        Je suis élève ingénieur en première année en
-        Électronique, Énergie électrique et Automatique
-        à l’ENSEEIHT de Toulouse. J’ai obtenu un BTS en
-        électrotechnique au Sénégal avant de poursuivre
-        mes études en France.
+      <p
+        data-en="I am a first-year engineering student in Electronics, Electrical Energy and Automatic Control at ENSEEIHT in Toulouse. I previously obtained a BTS in Electrotechnics in Senegal before continuing my studies in France."
+        data-fr="Je suis élève ingénieur en première année en Électronique, Énergie électrique et Automatique à l’ENSEEIHT de Toulouse. J’ai obtenu un BTS en électrotechnique au Sénégal avant de poursuivre mes études en France.">
+        Je suis élève ingénieur en première année en Électronique,
+        Énergie électrique et Automatique à l’ENSEEIHT de Toulouse.
+        J’ai obtenu un BTS en électrotechnique au Sénégal avant de
+        poursuivre mes études en France.
       </p>
 
-      <p>
-        Passionné par l’énergie électrique, je souhaite
-        continuer à développer mes compétences techniques
-        dans les systèmes électriques et énergétiques.
+      <p
+        data-en="I am passionate about electrical energy and want to keep developing my technical skills in electrical and energy systems."
+        data-fr="Passionné par l’énergie électrique, je souhaite continuer à développer mes compétences techniques dans les systèmes électriques et énergétiques.">
+        Passionné par l’énergie électrique, je souhaite continuer à
+        développer mes compétences techniques dans les systèmes
+        électriques et énergétiques.
       </p>
     </div>
   </div>
 
-  <p>
-    Ce portfolio présente mes projets d’ingénierie,
-    mes expériences professionnelles, mes objectifs de
-    mobilité internationale, mes engagements citoyens
-    et mes centres d’intérêt.
+  <p
+    data-en="This portfolio presents my engineering projects, professional experience, international mobility goals, civic engagement and interests."
+    data-fr="Ce portfolio présente mes projets d’ingénierie, mes expériences professionnelles, mes objectifs de mobilité internationale, mes engagements citoyens et mes centres d’intérêt.">
+    Ce portfolio présente mes projets d’ingénierie, mes expériences
+    professionnelles, mes objectifs de mobilité internationale,
+    mes engagements citoyens et mes centres d’intérêt.
   </p>
 
-  <h3>Présentation vidéo</h3>
+  <h3 data-en="Video presentation" data-fr="Présentation vidéo">
+    Présentation vidéo
+  </h3>
 
   <video controls width="100%" style="max-width:650px">
     <source src="./presentation-english.mp4" type="video/mp4">
     Votre navigateur ne peut pas lire cette vidéo.
   </video>
+
+  <p class="note"
+    data-en="To display the video, place presentation-english.mp4 in the same folder as this HTML file."
+    data-fr="Pour afficher la vidéo, place le fichier presentation-english.mp4 dans le même dossier que ce fichier HTML.">
+    Pour afficher la vidéo, place le fichier presentation-english.mp4
+    dans le même dossier que ce fichier HTML.
+  </p>
 </section>
 
 <!-- PROJETS D’INGÉNIERIE -->
 <section id="projects">
-  <h2>Projets d’ingénierie et compétences</h2>
+  <h2 data-en="Engineering projects and skills"
+    data-fr="Projets d’ingénierie et compétences">
+    Projets d’ingénierie et compétences
+  </h2>
 
   <div class="project">
-    <h3>Ruche connectée — Projet de licence EEA</h3>
+    <h3 data-en="Connected beehive — Bachelor's project (EEA)"
+      data-fr="Ruche connectée — Projet de licence EEA">
+      Ruche connectée — Projet de licence EEA
+    </h3>
 
     <div class="project-images">
-      <img
-        src="./ruche.jpg2.jpeg"
-        alt="Projet de ruche connectée"
-      >
+      <img src="./ruche.jpg2.jpeg"
+        alt="Photo du projet de ruche connectée">
     </div>
 
-    <p>
+    <p><em
+      data-en="University of Toulouse, January–June 2026. Team project (3 students)."
+      data-fr="Université de Toulouse, janvier–juin 2026. Projet réalisé en équipe de trois.">
       Université de Toulouse, janvier–juin 2026.
       Projet réalisé en équipe de trois.
+    </em></p>
+
+    <p
+      data-en="We designed and validated a connected beehive prototype that remotely measures temperature, humidity and hive weight. The system uses an Arduino Uno, DHT11 and SHT31 sensors, an HX711 weighing module and Bluetooth data transmission to a phone."
+      data-fr="Nous avons conçu et validé un prototype de ruche connectée capable de mesurer à distance la température, l’humidité et le poids de la ruche. Le système utilise une carte Arduino Uno, des capteurs DHT11 et SHT31, un module de pesée HX711 et une transmission Bluetooth vers un téléphone.">
+      Nous avons conçu et validé un prototype de ruche connectée
+      capable de mesurer à distance la température, l’humidité et
+      le poids de la ruche. Le système utilise une carte Arduino Uno,
+      des capteurs DHT11 et SHT31, un module de pesée HX711 et une
+      transmission Bluetooth vers un téléphone.
     </p>
 
-    <p>
-      Nous avons conçu et validé un prototype de ruche
-      connectée capable de mesurer à distance la température,
-      l’humidité et le poids de la ruche. Le système utilise
-      une carte Arduino Uno, des capteurs DHT11 et SHT31,
-      un module de pesée HX711 et une transmission Bluetooth
-      vers un téléphone.
-    </p>
-
-    <p>
-      Nous avons vérifié les protocoles de communication
-      One Wire, I2C et UART à l’aide d’un oscilloscope
-      PicoScope et utilisé un GPS pour collecter des données
-      de position. Nous avons aussi dimensionné une
-      alimentation solaire avec un panneau de 5 W et une
-      batterie lithium-ion de 20 Ah.
+    <p
+      data-en="We checked communication protocols (One Wire, I2C and UART) with a PicoScope oscilloscope and used GPS to collect position data. We also sized a solar power supply with a 5 W panel and a 20 Ah lithium-ion battery, giving a theoretical autonomy of five days."
+      data-fr="Nous avons vérifié les protocoles de communication (One Wire, I2C et UART) à l’aide d’un oscilloscope PicoScope et utilisé un GPS pour collecter des données de position. Nous avons aussi dimensionné une alimentation solaire avec un panneau de 5 W et une batterie lithium-ion de 20 Ah, pour une autonomie théorique de cinq jours.">
+      Nous avons vérifié les protocoles de communication (One Wire,
+      I2C et UART) à l’aide d’un oscilloscope PicoScope et utilisé un
+      GPS pour collecter des données de position. Nous avons aussi
+      dimensionné une alimentation solaire avec un panneau de 5 W
+      et une batterie lithium-ion de 20 Ah, pour une autonomie
+      théorique de cinq jours.
     </p>
   </div>
 
   <div class="project">
-    <h3>
-      Système photovoltaïque autonome pour un réfrigérateur
-      de médicaments — Projet BTS
+    <h3
+      data-en="Autonomous photovoltaic system for a medicine refrigerator — BTS project"
+      data-fr="Système photovoltaïque autonome pour un réfrigérateur de médicaments — Projet BTS">
+      Système photovoltaïque autonome pour un réfrigérateur de médicaments — Projet BTS
     </h3>
 
     <div class="project-images">
-      <img
-        src="./photovoltaique.jpeg"
-        alt="Système photovoltaïque autonome"
-      >
+      <img src="./photovoltaique.jpeg"
+        alt="Photo du système photovoltaïque autonome">
     </div>
 
-    <p>
-      L’objectif était de concevoir un système photovoltaïque
-      autonome capable d’alimenter de façon fiable et continue
-      un réfrigérateur médical, afin de préserver la chaîne
-      du froid des médicaments dans les zones isolées sans
-      réseau électrique.
+    <p
+      data-en="The objective was to design an autonomous photovoltaic system able to power a medical refrigerator reliably and continuously, preserving the cold chain for medicines in isolated areas without grid electricity."
+      data-fr="L’objectif était de concevoir un système photovoltaïque autonome capable d’alimenter de façon fiable et continue un réfrigérateur médical, afin de préserver la chaîne du froid des médicaments dans les zones isolées sans réseau électrique.">
+      L’objectif était de concevoir un système photovoltaïque autonome
+      capable d’alimenter de façon fiable et continue un réfrigérateur
+      médical, afin de préserver la chaîne du froid des médicaments
+      dans les zones isolées sans réseau électrique.
     </p>
 
-    <p>
-      J’ai dimensionné le système à partir de la consommation
-      du réfrigérateur (70 W), puis réalisé et testé un
-      prototype composé d’un panneau solaire, d’un régulateur
-      de charge, d’une batterie et d’un onduleur.
+    <p
+      data-en="I sized the system based on the refrigerator’s 70 W consumption, then built and tested a prototype comprising a solar panel, charge controller, battery and inverter."
+      data-fr="J’ai dimensionné le système à partir de la consommation du réfrigérateur (70 W), puis réalisé et testé un prototype composé d’un panneau solaire, d’un régulateur de charge, d’une batterie et d’un onduleur.">
+      J’ai dimensionné le système à partir de la consommation du
+      réfrigérateur (70 W), puis réalisé et testé un prototype composé
+      d’un panneau solaire, d’un régulateur de charge, d’une batterie
+      et d’un onduleur.
     </p>
   </div>
 
   <div class="project">
-    <h3>
-      Développement du jeu Snake en langage C —
-      Projet collectif à l’ENSEEIHT
+    <h3
+      data-en="Snake Game Development in C — Team Project at ENSEEIHT (N7)"
+      data-fr="Développement du jeu Snake en langage C — Projet collectif à l’ENSEEIHT (N7)">
+      Développement du jeu Snake en langage C — Projet collectif à l’ENSEEIHT (N7)
     </h3>
 
-    <p>
-      Lors de la première année du cycle ingénieur à
-      l’ENSEEIHT, j’ai travaillé avec un camarade sur un jeu
-      Snake développé en langage C. Ce projet collectif nous
-      a permis de pratiquer la logique de programmation,
-      les structures de données et le débogage.
+    <p
+      data-en="During the first year of the engineering cycle at ENSEEIHT, I worked with a colleague on a Snake game developed in the C programming language. This collaborative project helped us practise programming logic, data structures and debugging."
+      data-fr="Lors de la première année du cycle ingénieur à l’ENSEEIHT, j’ai travaillé avec un camarade sur un jeu Snake développé en langage C. Ce projet collectif nous a permis de pratiquer la logique de programmation, les structures de données et le débogage.">
+      Lors de la première année du cycle ingénieur à l’ENSEEIHT,
+      j’ai travaillé avec un camarade sur un jeu Snake développé
+      en langage C. Ce projet collectif nous a permis de pratiquer
+      la logique de programmation, les structures de données et
+      le débogage.
     </p>
 
-    <canvas
-      id="snakeCanvas"
-      width="480"
-      height="300"
-      aria-label="Animation du jeu Snake"
-    ></canvas>
+    <canvas id="snakeCanvas" width="480" height="300"
+      aria-label="Animation du jeu Snake"></canvas>
 
-    <p class="note">
-      Animation du serpent se dirigeant vers la pomme.
+    <p class="note"
+      data-en="Decorative animation: the snake follows a path toward the apple, eats it, grows, and a new apple appears."
+      data-fr="Animation décorative : le serpent suit un chemin vers la pomme, la mange, grandit, puis une nouvelle pomme apparaît.">
+      Animation décorative : le serpent suit un chemin vers la pomme,
+      la mange, grandit, puis une nouvelle pomme apparaît.
     </p>
   </div>
 
-  <h3>Compétences techniques</h3>
+  <h3 data-en="Technical skills" data-fr="Compétences techniques">
+    Compétences techniques
+  </h3>
 
   <ul>
-    <li>
-      Automatismes industriels : programmation en Ladder
-      (LD) et FBD ; analyse de cahiers des charges.
-    </li>
+    <li>Automatismes industriels : programmation en Ladder (LD) et FBD ; analyse de cahiers des charges.</li>
     <li>Modélisation et simulation sous MATLAB/Simulink.</li>
-    <li>
-      Commande des systèmes : fonctions de transfert,
-      diagrammes de Bode et stabilité.
-    </li>
+    <li>Commande des systèmes : fonctions de transfert, diagrammes de Bode et stabilité.</li>
+    <li>Électronique et systèmes embarqués avec Proteus et LTspice.</li>
+    <li>Microcontrôleurs PIC avec MPLAB (C/assembleur), maintenance électrique et dépannage.</li>
+    <li>Appareils de mesure : multimètre, pince ampèremétrique et ampèremètre.</li>
+  </ul>
+
+  <div class="skills">
+    <div>
+      <h4>Logiciels</h4>
+      <ul>
+        <li>Proteus</li>
+        <li>Zelio Soft</li>
+        <li>LTspice</li>
+        <li>MATLAB / Simulink</li>
+        <li>MPLAB</li>
+      </ul>
+    </div>
+
+    <div>
+      <h4>Matériel</h4>
+      <ul>
+        <li>Arduino</li>
+        <li>PicoScope</li>
+        <li>Multimètre et pince</li>
+      </ul>
+    </div>
+
+    <div>
+      <h4>Outils bureautiques</h4>
+      <ul>
+        <li>Word</li>
+        <li>Excel</li>
+        <li>Canva</li>
+        <li>PowerPoint</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- CARRIÈRE -->
+<section id="careers">
+  <h2>Carrière et expériences professionnelles</h2>
+
+  <h3>METAL AFRIQUE — Stage en maintenance électrotechnique</h3>
+  <p><em>Septembre–octobre 2024</em></p>
+
+  <p>
+    Lors de mon stage chez METAL AFRIQUE, j’ai découvert concrètement
+    la maintenance électrotechnique et les installations électriques.
+    J’ai participé au câblage d’armoires électriques, au dépannage
+    d’équipements et au diagnostic de pannes. J’ai également travaillé
+    sur la lecture de schémas électriques, la maintenance préventive
+    et corrective, les tests et la mise en service. Cette expérience
+    m’a permis d’appliquer mes connaissances théoriques sur le terrain
+    et de développer une approche rigoureuse des interventions.
+  </p>
+
+  <h3>ALDI — Employé polyvalent, Toulouse</h3>
+  <p><em>Depuis février 2026</em></p>
+
+  <p>
+    Mon poste chez ALDI exige de l’organisation, de la réactivité
+    et un sens des responsabilités. Mes missions comprennent
+    l’encaissement, la mise en rayon, l’entretien du magasin et
+    le respect des règles d’hygiène et de sécurité. Cette expérience
+    développe mon autonomie, mon sens de l’organisation et mon
+    sens du service.
+  </p>
+
+  <h3>Perspectives professionnelles</h3>
+
+  <p>
+    Actuellement en première année de formation d’ingénieur en
+    Électronique, Énergie électrique et Automatique, je recherche
+    des opportunités de stage ou d’alternance pour mettre en pratique
+    les connaissances acquises. Je m’intéresse particulièrement à
+    l’énergie électrique, à l’électrotechnique, à la modélisation
+    et à la simulation des systèmes, ainsi qu’à l’automatique.
+  </p>
+</section>
+
+<!-- MOBILITÉ INTERNATIONALE -->
+<section id="mobility">
+  <h2>Mobilité internationale — Canada</h2>
+
+  <p>
+    C’est au Sénégal qu’est née ma passion pour l’énergie électrique.
+    J’y ai obtenu un BTS en électrotechnique, puis j’ai poursuivi mes
+    études en France. Ce parcours a renforcé mon envie de développer
+    mes compétences techniques et d’approfondir mes connaissances.
+  </p>
+
+  <p>
+    Je souhaite aujourd’hui effectuer une mobilité internationale
+    au Canada. Mon objectif principal est de renforcer mes compétences
+    techniques, d’enrichir mes connaissances en énergie électrique
+    et de découvrir de nouvelles technologies ainsi que de nouvelles
+    pratiques professionnelles.
+  </p>
+
+  <p>
+    Cette expérience me permettrait aussi de découvrir un nouvel
+    environnement culturel et académique, de rencontrer des personnes
+    issues d’horizons différents et d’apprendre d’autres méthodes
+    de travail. Je souhaite également améliorer mon anglais
+    professionnel, en particulier ma capacité à communiquer,
+    à collaborer et à échanger sur des sujets techniques dans
+    un contexte international.
+  </p>
+</section>
+
+<!-- ENGAGEMENT CITOYEN -->
+<section id="civic">
+  <h2>Engagement citoyen</h2>
+
+  <div class="activity">
+    <h3>Cours gratuits de mathématiques</h3>
+    <p>
+      Pendant les vacances scolaires au Sénégal, je donnais
+      gratuitement des cours de mathématiques à des élèves de
+      collège et de lycée. Cela m’a permis de partager mes
+      connaissances, de les accompagner dans leur apprentissage
+      et de contribuer à leur réussite scolaire.
+    </p>
+    <img src="./tutorat-1.jpg" alt="Séance de soutien scolaire"
+      onerror="this.style.display='none'">
+    <img src="./tutorat-2.jpg" alt="Séance de soutien scolaire"
+      onerror="this.style.display='none'">
+  </div>
+
+  <div class="activity">
+    <h3>Engagement associatif</h3>
+    <p>
+      Au Sénégal, j’ai été président de la commission sociale de
+      l’amicale des élèves et étudiants de mon village. Actuellement,
+      je suis membre de la commission sociale de l’association des
+      étudiants et stagiaires sénégalais de Toulouse. Ces engagements
+      ont renforcé mon sens des responsabilités, mon esprit d’équipe
+      et mon engagement solidaire.
+    </p>
+    <img src="./association.jpg" alt="Activité associative"
+      onerror="this.style.display='none'">
+  </div>
+
+  <div class="activity">
+    <h3>Actions environnementales</h3>
+    <p>
+      J’ai participé à des journées de nettoyage et à des activités
+      de reboisement au Sénégal, contribuant à la protection de
+      l’environnement et à la préservation de notre cadre de vie.
+    </p>
+    <img src="./reboisement.jpg" alt="Activité de reboisement"
+      onerror="this.style.display='none'">
+  </div>
+
+  <div class="activity">
+    <h3>Journée Futur Proche</h3>
+    <p>
+      J’ai participé à la journée Futur Proche à l’Université de
+      Toulouse, avec des conférences et des sessions abordant
+      notamment les ressources du campus et l’éthique en ingénierie.
+      Ces échanges m’ont amené à réfléchir aux enjeux environnementaux,
+      à l’utilisation responsable des ressources et aux responsabilités
+      éthiques des futurs ingénieurs.
+    </p>
+  </div>
+
+  <div class="activity">
+    <h3>Représentation des élèves et étudiants de ma commune</h3>
+    <p>
+      J’ai été invité à participer à une visite de terrain organisée
+      à l’occasion du déplacement du ministre de l’Énergie, en tant
+      que représentant des élèves et étudiants de ma commune. Cette
+      visite m’a permis de découvrir des entreprises du secteur
+      énergétique et de mieux comprendre certaines réalités du
+      milieu professionnel.
+    </p>
+    <img src="./visite-energie.jpg"
+      alt="Visite de terrain dans le secteur de l’énergie"
+      onerror="this.style.display='none'">
+  </div>
+
+  <p class="note">
+    Pour afficher les photos de cette rubrique, ajoute les images
+    correspondantes au dépôt GitHub avec les noms indiqués ci-dessus.
+  </p>
+</section>
+
+<!-- SPORTS ET AUTRES ACTIVITÉS -->
+<section id="sports">
+  <h2>Sports et autres activités</h2>
+
+  <h3>Football</h3>
+  <p>
+    Le football est l’un de mes sports préférés. Il me permet
+    de rester actif, de développer mon esprit d’équipe et de
+    partager des moments de plaisir avec les autres.
+  </p>
+
+  <h3>Lecture et débats télévisés</h3>
+  <p>
+    J’aime la lecture et les débats télévisés. Ces activités me
+    permettent d’élargir mes connaissances, de découvrir différents
+    points de vue et de développer mon esprit critique.
+  </p>
+
+  <h3>Voyages</h3>
+  <p>
+    J’aime voyager, car cela me donne l’occasion de découvrir de
+    nouveaux endroits, d’apprendre à connaître différentes cultures
+    et d’élargir ma vision du monde.
+  </p>
+
+  <h3>Cinéma</h3>
+  <p>
+    J’aime le cinéma, car il me permet de découvrir différentes
+    histoires, d’explorer de nouveaux points de vue et d’en
+    apprendre davantage sur différentes cultures.
+  </p>
+</section>
+
+<!-- CV ET CONTACT -->
+<section id="contact">
+  <h2>CV et contact</h2>
+
+  <p>
+    Tu peux ajouter tes fichiers de CV et tes coordonnées
+    personnelles dans cette rubrique.
+  </p>
+
+  <div class="links">
+    <a href="./CV_FR.pdf" target="_blank" rel="noopener">
+      CV français (CV_FR.pdf)
+    </a>
+
+    <a href="./Resume_EN.pdf" target="_blank" rel="noopener">
+      English résumé (Resume_EN.pdf)
+    </a>
+
+    <a href="https://www.linkedin.com/in/REPLACE-WITH-YOUR-PROFILE/"
+       target="_blank" rel="noopener">
+      LinkedIn — à personnaliser
+    </a>
+
+    <a href="mailto:YOUR-EMAIL@example.com">
+      Email — à personnaliser
+    </a>
+  </div>
+
+  <h3>Langues</h3>
+  <ul>
+    <li>Français — langue maternelle</li>
+    <li>Wolof</li>
+    <li>Anglais — niveau à préciser</li>
   </ul>
 </section>
+
+</main>
+
+<footer>© Ibrahima Thioune — E-portfolio</footer>
+
+<script>
+let currentLang = "fr";
+
+/* Fonction de navigation : affiche la rubrique choisie */
+function showSection(id, btn) {
+  const section = document.getElementById(id);
+
+  if (!section) {
+    console.error("Rubrique introuvable :", id);
+    return;
+  }
+
+  document.querySelectorAll("main section").forEach(s => {
+    s.classList.remove("active");
+  });
+
+  document.querySelectorAll("nav button:not(.lang)").forEach(b => {
+    b.classList.remove("active");
+  });
+
+  section.classList.add("active");
+
+  if (btn) {
+    btn.classList.add("active");
+  }
+
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+/* Bouton de traduction français / anglais */
+function toggleLang() {
+  currentLang = currentLang === "fr" ? "en" : "fr";
+  document.documentElement.lang = currentLang;
+
+  document.querySelectorAll("[data-en][data-fr]").forEach(el => {
+    el.textContent = el.getAttribute("data-" + currentLang);
+  });
+
+  document.getElementById("langBtn").textContent =
+    currentLang === "fr" ? "EN" : "FR";
+}
+
+/* Animation Snake qui se dirige vers la pomme */
+(function () {
+  const canvas = document.getElementById("snakeCanvas");
+  if (!canvas) return;
+
+  const ctx = canvas.getContext("2d");
+  const cell = 20;
+  const cols = 24;
+  const rows = 15;
+
+  let snake = [
+    { x: 5, y: 7 },
+    { x: 4, y: 7 },
+    { x: 3, y: 7 }
+  ];
+
+  let apple = { x: 17, y: 7 };
+
+  function randomApple() {
+    let p;
+
+    do {
+      p = {
+        x: Math.floor(Math.random() * cols),
+        y: Math.floor(Math.random() * rows)
+      };
+    } while (snake.some(s => s.x === p.x && s.y === p.y));
+
+    apple = p;
+  }
+
+  function pathToApple() {
+    const dirs = [
+      { x: 1, y: 0 },
+      { x: 0, y: 1 },
+      { x: -1, y: 0 },
+      { x: 0, y: -1 }
+    ];
+
+    const key = p => p.x + "," + p.y;
+    const start = snake[0];
+    const queue = [start];
+    const prev = new Map();
+
+    prev.set(key(start), null);
+
+    while (queue.length) {
+      const p = queue.shift();
+
+      if (p.x === apple.x && p.y === apple.y) break;
+
+      for (const d of dirs) {
+        const n = { x: p.x + d.x, y: p.y + d.y };
+
+        if (
+          n.x < 0 || n.x >= cols ||
+          n.y < 0 || n.y >= rows
+        ) continue;
+
+        if (snake.slice(0, -1).some(
+          s => s.x === n.x && s.y === n.y
+        )) continue;
+
+        if (!prev.has(key(n))) {
+          prev.set(key(n), key(p));
+          queue.push(n);
+        }
+      }
+    }
+
+    let k = key(apple);
+    if (!prev.has(k)) return null;
+
+    const route = [];
+
+    while (prev.get(k) !== null) {
+      const [x, y] = k.split(",").map(Number);
+      route.unshift({ x, y });
+      k = prev.get(k);
+    }
+
+    return route;
+  }
+
+  function draw() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    ctx.fillStyle = "#f0f7ed";
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    ctx.fillStyle = "#dc2626";
+    ctx.beginPath();
+    ctx.arc(
+      apple.x * cell + cell / 2,
+      apple.y * cell + cell / 2,
+      cell * 0.38,
+      0,
+      Math.PI * 2
+    );
+    ctx.fill();
+
+    snake.forEach((s, i) => {
+      ctx.fillStyle = i === 0 ? "#166534" : "#22a447";
+      ctx.fillRect(
+        s.x * cell + 1,
+        s.y * cell + 1,
+        cell - 2,
+        cell - 2
+      );
+    });
+
+    const h = snake[0];
+    ctx.fillStyle = "white";
+    ctx.fillRect(h.x * cell + 5, h.y * cell + 5, 3, 3);
+    ctx.fillRect(h.x * cell + 12, h.y * cell + 5, 3, 3);
+  }
+
+  function step() {
+    const route = pathToApple();
+    let next;
+
+    if (route && route.length) {
+      next = route[0];
+    } else {
+      const dirs = [
+        { x: 1, y: 0 },
+        { x: 0, y: 1 },
+        { x: -1, y: 0 },
+        { x: 0, y: -1 }
+      ];
+
+      next = dirs.map(d => ({
+        x: snake[0].x + d.x,
+        y: snake[0].y + d.y
+      })).find(n =>
+        n.x >= 0 && n.x < cols &&
+        n.y >= 0 && n.y < rows &&
+        !snake.slice(0, -1).some(
+          s => s.x === n.x && s.y === n.y
+        )
+      );
+
+      if (!next) {
+        snake = [
+          { x: 5, y: 7 },
+          { x: 4, y: 7 },
+          { x: 3, y: 7 }
+        ];
+        randomApple();
+        draw();
+        return;
+      }
+    }
+
+    const ate = next.x === apple.x && next.y === apple.y;
+    snake.unshift(next);
+
+    if (!ate) {
+      snake.pop();
+    } else {
+      randomApple();
+    }
+
+    draw();
+  }
+
+  draw();
+  setInterval(step, 420);
+})();
+</script>
+
+</body>
+</html>
