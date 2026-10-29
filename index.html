@@ -1,205 +1,407 @@
-
 <!DOCTYPE html>
-<html lang="en" translate="no">
+<html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="google" content="notranslate">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ibrahima Thioune - E-portfolio</title>
-  <style>
-    body { font-family: Arial, sans-serif; margin: 0; background: #f4f6f8; color: #222; }
-    header { background: #1f3a5f; color: white; padding: 20px; text-align: center; }
-    nav { background: #2d5086; text-align: center; }
-    nav button { background: none; border: none; color: white; padding: 14px 18px; font-size: 16px; cursor: pointer; }
-    nav button:hover, nav button.active { background: #1f3a5f; }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ibrahima Thioune — E-portfolio</title>
 
-    /* Bouton de changement de langue en rouge */
-    nav button.lang {
-      background: #e60000;
-      color: white;
-      border: 2px solid #e60000;
-      border-radius: 20px;
-      padding: 6px 14px;
-      margin-left: 20px;
-    }
-    nav button.lang:hover {
-      background: #b30000;
-      border-color: #b30000;
-    }
+<style>
+:root {
+  --navy: #1f3a5f;
+  --blue: #2d5086;
+  --red: #e60000;
+  --bg: #f4f6f8;
+}
 
-    /* Images à droite des descriptions des projets */
-    .project-images {
-      float: right;
-      width: 260px;
-      max-width: 40%;
-      margin: 0 0 18px 22px;
-    }
-    .project-images img {
-      display: block;
-      width: 100%;
-      height: auto;
-      object-fit: contain;
-      margin-bottom: 12px;
-      border-radius: 8px;
-    }
+* {
+  box-sizing: border-box;
+}
 
-    section { display: none; max-width: 800px; margin: 30px auto; padding: 20px; background: white; border-radius: 8px; line-height: 1.6; }
-    section.active { display: block; }
-    h2 { color: #1f3a5f; }
-    h3 { color: #2d5086; margin-top: 28px; }
-    .skills { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 24px; margin-top: 10px; }
-    .skills h4 { color: #6b7280; font-size: 14px; border-bottom: 1px solid #ddd; padding-bottom: 6px; margin: 0 0 10px; }
-    .skills ul { list-style: none; padding: 0; margin: 0; }
-    .skills li { padding: 6px 0; }
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background: var(--bg);
+  color: #222;
+  line-height: 1.65;
+}
 
-    @media (max-width: 600px) {
-      .project-images {
-        float: none;
-        width: 100%;
-        max-width: 100%;
-        margin: 12px 0;
-      }
-    }
-  </style>
+header {
+  background: var(--navy);
+  color: white;
+  text-align: center;
+  padding: 24px 16px;
+}
+
+header h1 {
+  margin: 0 0 6px;
+}
+
+nav {
+  background: var(--blue);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2px;
+  flex-wrap: wrap;
+  padding: 6px;
+}
+
+nav button {
+  background: transparent;
+  border: 0;
+  color: white;
+  padding: 12px 13px;
+  font-size: 15px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+nav button:hover,
+nav button.active {
+  background: var(--navy);
+}
+
+nav button.lang {
+  background: var(--red);
+  border-radius: 20px;
+  padding: 7px 14px;
+  margin: 4px 8px;
+}
+
+main {
+  padding: 1px 16px 28px;
+}
+
+section {
+  display: none;
+  max-width: 1000px;
+  margin: 28px auto;
+  padding: 26px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 12px #0000000c;
+}
+
+section.active {
+  display: block;
+}
+
+h2 {
+  color: var(--navy);
+  margin-top: 0;
+}
+
+h3 {
+  color: var(--blue);
+  margin-top: 25px;
+}
+
+.profile-intro {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  flex-wrap: wrap;
+  margin: 10px 0 24px;
+}
+
+.profile-photo {
+  width: 190px;
+  height: 240px;
+  object-fit: contain;
+  object-position: center;
+  border-radius: 12px;
+  background: #f4f6f8;
+  flex-shrink: 0;
+}
+
+.profile-text {
+  flex: 1;
+  min-width: 230px;
+}
+
+.project {
+  display: flow-root;
+  margin: 22px 0 30px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.project-images {
+  float: right;
+  width: 260px;
+  max-width: 40%;
+  margin: 0 0 18px 22px;
+}
+
+.project-images img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  margin-bottom: 12px;
+  border-radius: 8px;
+}
+
+.activity {
+  padding: 12px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.activity img {
+  max-width: 260px;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin: 8px 16px 8px 0;
+}
+
+#snakeCanvas {
+  display: block;
+  width: 100%;
+  max-width: 480px;
+  height: auto;
+  background: #f0f7ed;
+  border: 2px solid #c8dfc0;
+  border-radius: 8px;
+  margin: 12px 0;
+}
+
+.note {
+  font-size: 0.92rem;
+  color: #555;
+}
+
+footer {
+  text-align: center;
+  color: #666;
+  padding: 20px;
+}
+
+@media (max-width: 600px) {
+  section {
+    padding: 18px;
+    margin: 18px auto;
+  }
+
+  .project-images {
+    float: none;
+    width: 100%;
+    max-width: 100%;
+    margin: 12px 0;
+  }
+
+  .profile-intro {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .profile-photo {
+    width: 165px;
+    height: 210px;
+  }
+
+  nav button {
+    padding: 10px;
+    font-size: 14px;
+  }
+}
+</style>
 </head>
+
 <body>
 
-  <header>
-    <h1>Ibrahima Thioune</h1>
-    <p data-en="Engineering student at ENSEEIHT, Toulouse" data-fr="Élève ingénieur à l'ENSEEIHT de Toulouse">Engineering student at ENSEEIHT, Toulouse</p>
-  </header>
+<header>
+  <h1>Ibrahima Thioune</h1>
+  <p>Élève ingénieur à l’ENSEEIHT de Toulouse</p>
+</header>
 
-  <nav>
-    <button class="active" onclick="show('welcome', this)" data-en="Welcome" data-fr="Accueil">Welcome</button>
-    <button onclick="show('courses', this)" data-en="Engineering courses" data-fr="Cours d'ingénierie">Engineering courses</button>
-    <button onclick="show('civic', this)" data-en="Civic Engagement" data-fr="Engagement citoyen">Civic Engagement</button>
-    <button onclick="show('mobility', this)" data-en="Mobility" data-fr="Mobilité">Mobility</button>
-    <button onclick="show('careers', this)" data-en="Careers" data-fr="Carrière">Careers</button>
-    <button onclick="show('sports', this)" data-en="Sports and interests" data-fr="Sports et centres d'intérêt">Sports and interests</button>
-    <button class="lang" id="langBtn" onclick="toggleLang()">FR</button>
-  </nav>
+<nav aria-label="Navigation principale">
+  <button class="active"
+    onclick="showSection('welcome', this)">
+    Accueil
+  </button>
 
-  <section id="welcome" class="active">
-    <h2 data-en="Welcome" data-fr="Accueil">Welcome</h2>
-    <p data-en="I am Ibrahima Thioune, a first-year engineering student in electronics, electrical energy and automatic control at ENSEEIHT in Toulouse. I earned a BTS in electrical engineering before joining the bachelor's degree in electronics, electrical energy and automatic control at the University of Toulouse. I am passionate about electrical energy, and I want to become an engineer in electrical and energy systems, specializing in the design and control of sustainable industrial systems." data-fr="Je suis Ibrahima Thioune, élève ingénieur en première année en électronique, énergie électrique et automatique à l'ENSEEIHT de Toulouse. J'ai obtenu un BTS en électrotechnique avant d'intégrer la licence électronique, énergie électrique et automatique à l'Université de Toulouse. L'énergie électrique me passionne, et je veux devenir ingénieur en systèmes électriques et énergétiques, avec une spécialisation dans la conception et la commande de systèmes industriels durables.">I am Ibrahima Thioune, a first-year engineering student in electronics, electrical energy and automatic control at ENSEEIHT in Toulouse. I earned a BTS in electrical engineering before joining the bachelor's degree in electronics, electrical energy and automatic control at the University of Toulouse. I am passionate about electrical energy, and I want to become an engineer in electrical and energy systems, specializing in the design and control of sustainable industrial systems.</p>
-    <p data-en="This website presents my projects, my experiences and my interests. Feel free to contact me to discuss them." data-fr="Ce site présente mes projets, mes expériences et mes centres d'intérêt. Vous pouvez me contacter pour échanger.">This website presents my projects, my experiences and my interests. Feel free to contact me to discuss them.</p>
-  </section>
+  <button onclick="showSection('projects', this)">
+    Projets d’ingénierie
+  </button>
 
-  <section id="courses">
-    <h2 data-en="projects and skills" data-fr="projets et competences">projects and skills</h2>
+  <button onclick="showSection('careers', this)">
+    Carrière
+  </button>
 
-    <h3 data-en="Study of a Connected Beehive – 3rd-Year Bachelor's Project (EEA)" data-fr="Étude d'une ruche connectée – Projet L3 EEA">Study of a Connected Beehive – 3rd-Year Bachelor's Project (EEA)</h3>
+  <button onclick="showSection('mobility', this)">
+    Mobilité internationale
+  </button>
 
-    <!-- Photo du projet de ruche connectée -->
+  <button onclick="showSection('civic', this)">
+    Engagement citoyen
+  </button>
+
+  <button onclick="showSection('sports', this)">
+    Sports et autres activités
+  </button>
+
+  <button onclick="showSection('contact', this)">
+    CV et contact
+  </button>
+
+  <button class="lang" id="langBtn" onclick="toggleLang()">
+    EN
+  </button>
+</nav>
+
+<main>
+
+<!-- ACCUEIL -->
+<section id="welcome" class="active">
+  <h2>Accueil</h2>
+
+  <div class="profile-intro">
+    <img
+      class="profile-photo"
+      src="./portrait.jpg"
+      alt="Portrait d’Ibrahima Thioune"
+    >
+
+    <div class="profile-text">
+      <h3>Ibrahima Thioune</h3>
+
+      <p>
+        Je suis élève ingénieur en première année en
+        Électronique, Énergie électrique et Automatique
+        à l’ENSEEIHT de Toulouse. J’ai obtenu un BTS en
+        électrotechnique au Sénégal avant de poursuivre
+        mes études en France.
+      </p>
+
+      <p>
+        Passionné par l’énergie électrique, je souhaite
+        continuer à développer mes compétences techniques
+        dans les systèmes électriques et énergétiques.
+      </p>
+    </div>
+  </div>
+
+  <p>
+    Ce portfolio présente mes projets d’ingénierie,
+    mes expériences professionnelles, mes objectifs de
+    mobilité internationale, mes engagements citoyens
+    et mes centres d’intérêt.
+  </p>
+
+  <h3>Présentation vidéo</h3>
+
+  <video controls width="100%" style="max-width:650px">
+    <source src="./presentation-english.mp4" type="video/mp4">
+    Votre navigateur ne peut pas lire cette vidéo.
+  </video>
+</section>
+
+<!-- PROJETS D’INGÉNIERIE -->
+<section id="projects">
+  <h2>Projets d’ingénierie et compétences</h2>
+
+  <div class="project">
+    <h3>Ruche connectée — Projet de licence EEA</h3>
+
     <div class="project-images">
-      <img src="./ruche.jpg2.jpeg" alt="Photo du projet de ruche connectée">
+      <img
+        src="./ruche.jpg2.jpeg"
+        alt="Projet de ruche connectée"
+      >
     </div>
 
-    <p style="font-style: italic;" data-en="University of Toulouse, January – June 2026. Team project (3 students)." data-fr="Université de Toulouse, janvier – juin 2026. Projet réalisé en équipe de trois.">University of Toulouse, January – June 2026. Team project (3 students).</p>
-    <p data-en="We designed and validated a connected beehive prototype that remotely measures the hive's temperature, humidity and weight. The system is based on an Arduino Uno board, two temperature and humidity sensors (DHT11 outside, SHT31 inside), an HX711 weighing module, and Bluetooth data transmission to a phone." data-fr="Nous avons conçu et validé un prototype de ruche connectée, capable de mesurer à distance la température, l'humidité et le poids de la ruche. Le système repose sur une carte Arduino Uno, deux capteurs de température et d'humidité (DHT11 à l'extérieur, SHT31 à l'intérieur), un module de pesée HX711 et une transmission des données par Bluetooth vers un téléphone.">We designed and validated a connected beehive prototype that remotely measures the hive's temperature, humidity and weight. The system is based on an Arduino Uno board, two temperature and humidity sensors (DHT11 outside, SHT31 inside), an HX711 weighing module, and Bluetooth data transmission to a phone.</p>
-    <p data-en="We checked the communication protocols (One Wire, I2C, UART) using a PicoScope oscilloscope. A GPS was used to collect position data. Finally, we sized the solar power supply: a 5 W panel and a 20 Ah lithium-ion battery, for a theoretical autonomy of 5 days." data-fr="Nous avons vérifié les protocoles de communication (One Wire, I2C, UART) à l'aide d'un oscilloscope PicoScope. Un GPS a servi à collecter des données de position. Nous avons enfin dimensionné l'alimentation solaire : un panneau de 5 W et une batterie lithium-ion de 20 Ah, pour une autonomie théorique de 5 jours.">We checked the communication protocols (One Wire, I2C, UART) using a PicoScope oscilloscope. A GPS was used to collect position data. Finally, we sized the solar power supply: a 5 W panel and a 20 Ah lithium-ion battery, for a theoretical autonomy of 5 days.</p>
-    <p data-en="This project taught me how to program sensors, analyze signals, and size an energy-autonomous system." data-fr="Ce projet m'a appris à programmer des capteurs, à analyser des signaux et à dimensionner un système autonome en énergie.">This project taught me how to program sensors, analyze signals, and size an energy-autonomous system.</p>
+    <p>
+      Université de Toulouse, janvier–juin 2026.
+      Projet réalisé en équipe de trois.
+    </p>
 
-    <h3 data-en="Autonomous Photovoltaic System for a Medicine Refrigerator – BTS Project" data-fr="Système photovoltaïque autonome pour un réfrigérateur de médicaments – Projet BTS">Autonomous Photovoltaic System for a Medicine Refrigerator – BTS Project</h3>
+    <p>
+      Nous avons conçu et validé un prototype de ruche
+      connectée capable de mesurer à distance la température,
+      l’humidité et le poids de la ruche. Le système utilise
+      une carte Arduino Uno, des capteurs DHT11 et SHT31,
+      un module de pesée HX711 et une transmission Bluetooth
+      vers un téléphone.
+    </p>
 
-    <!-- Photo du projet photovoltaïque -->
+    <p>
+      Nous avons vérifié les protocoles de communication
+      One Wire, I2C et UART à l’aide d’un oscilloscope
+      PicoScope et utilisé un GPS pour collecter des données
+      de position. Nous avons aussi dimensionné une
+      alimentation solaire avec un panneau de 5 W et une
+      batterie lithium-ion de 20 Ah.
+    </p>
+  </div>
+
+  <div class="project">
+    <h3>
+      Système photovoltaïque autonome pour un réfrigérateur
+      de médicaments — Projet BTS
+    </h3>
+
     <div class="project-images">
-      <img src="./photovoltaique.jpeg" alt="Photo du système photovoltaïque autonome">
+      <img
+        src="./photovoltaique.jpeg"
+        alt="Système photovoltaïque autonome"
+      >
     </div>
 
-    <p data-en="Objective: to design an autonomous photovoltaic system able to power a medical refrigerator reliably and continuously, in order to preserve the cold chain of medicines in isolated areas without a power grid." data-fr="Objectif : concevoir un système photovoltaïque autonome capable d'alimenter un réfrigérateur médical de façon fiable et continue, afin de préserver la chaîne du froid des médicaments dans les zones isolées sans réseau électrique.">Objective: to design an autonomous photovoltaic system able to power a medical refrigerator reliably and continuously, in order to preserve the cold chain of medicines in isolated areas without a power grid.</p>
-    <p data-en="I sized the system from the refrigerator's consumption (70 W), then built and tested a prototype made of a solar panel, a charge controller, a battery and an inverter." data-fr="J'ai dimensionné le système à partir de la consommation du réfrigérateur (70 W), puis réalisé et testé un prototype composé d'un panneau solaire, d'un régulateur de charge, d'une batterie et d'un onduleur.">I sized the system from the refrigerator's consumption (70 W), then built and tested a prototype made of a solar panel, a charge controller, a battery and an inverter.</p>
+    <p>
+      L’objectif était de concevoir un système photovoltaïque
+      autonome capable d’alimenter de façon fiable et continue
+      un réfrigérateur médical, afin de préserver la chaîne
+      du froid des médicaments dans les zones isolées sans
+      réseau électrique.
+    </p>
 
-    <h3 data-en="Skills" data-fr="Compétences">Skills</h3>
-    <ul>
-      <li data-en="Industrial automation: design and programming in Ladder (LD) and FBD, study and analysis of specifications" data-fr="Automatismes industriels : conception et programmation en Ladder (LD) et FBD, étude et analyse des cahiers des charges">Industrial automation: design and programming in Ladder (LD) and FBD, study and analysis of specifications</li>
-      <li data-en="Modeling and simulation: development of models in MATLAB/Simulink" data-fr="Modélisation et simulation : développement de modèles sous MATLAB/Simulink">Modeling and simulation: development of models in MATLAB/Simulink</li>
-      <li data-en="Control systems: time and frequency analysis (transfer functions, Bode, stability)" data-fr="Commande des systèmes : analyse temporelle et fréquentielle (fonctions de transfert, Bode, stabilité)">Control systems: time and frequency analysis (transfer functions, Bode, stability)</li>
-      <li data-en="Electronics: simulation of circuits and embedded systems with Proteus and LTspice" data-fr="Électronique : simulation de circuits et de systèmes embarqués avec Proteus et LTspice">Electronics: simulation of circuits and embedded systems with Proteus and LTspice</li>
-      <li data-en="Microcontrollers: programming of PIC microcontrollers with MPLAB (C / Assembly)" data-fr="Microcontrôleurs : programmation de PIC sous MPLAB (C / Assembleur)">Microcontrollers: programming of PIC microcontrollers with MPLAB (C / Assembly)</li>
-      <li data-en="Maintenance and troubleshooting of electrical equipment" data-fr="Maintenance et dépannage d'équipements électrotechniques">Maintenance and troubleshooting of electrical equipment</li>
-      <li data-en="Use of measuring instruments (multimeter, clamp meter, ammeter)" data-fr="Utilisation d'appareils de mesure (multimètre, pince, ampèremètre)">Use of measuring instruments (multimeter, clamp meter, ammeter)</li>
-    </ul>
+    <p>
+      J’ai dimensionné le système à partir de la consommation
+      du réfrigérateur (70 W), puis réalisé et testé un
+      prototype composé d’un panneau solaire, d’un régulateur
+      de charge, d’une batterie et d’un onduleur.
+    </p>
+  </div>
 
-    <h3 data-en="Software, tools and languages" data-fr="Logiciels, outils">Software, tools </h3>
-    <div class="skills">
-      <div>
-        <h4 data-en="Software" data-fr="Logiciels">Software</h4>
-        <ul>
-          <li>Proteus</li>
-          <li>Zelio Soft</li>
-          <li>LTspice</li>
-          <li>MATLAB / Simulink</li>
-          <li>MPLAB</li>
-        </ul>
-      </div>
-      <div>
-        <h4 data-en="Hardware" data-fr="Matériel">Hardware</h4>
-        <ul>
-          <li>Arduino</li>
-          <li>PicoScope</li>
-          <li data-en="Multimeter, clamp meter" data-fr="Multimètre, pince">Multimeter, clamp meter</li>
-        </ul>
-      </div>
-      <div>
-        <h4 data-en="Office tools" data-fr="Outils bureautiques">Office tools</h4>
-        <ul>
-          <li>Word</li>
-          <li>Excel</li>
-          <li>Canva</li>
-          <li>PowerPoint</li>
-        </ul>
-      </div>
-      <div>
-      </div>
-    </div>
-  </section>
+  <div class="project">
+    <h3>
+      Développement du jeu Snake en langage C —
+      Projet collectif à l’ENSEEIHT
+    </h3>
 
-  <section id="civic">
-    <h2 data-en="Civic Engagement" data-fr="Engagement citoyen">Civic Engagement</h2>
-    <p data-en="YOUR TEXT HERE in English." data-fr="VOTRE TEXTE ICI en français.">YOUR TEXT HERE in English.</p>
-  </section>
+    <p>
+      Lors de la première année du cycle ingénieur à
+      l’ENSEEIHT, j’ai travaillé avec un camarade sur un jeu
+      Snake développé en langage C. Ce projet collectif nous
+      a permis de pratiquer la logique de programmation,
+      les structures de données et le débogage.
+    </p>
 
-  <section id="mobility">
-    <h2 data-en="Mobility" data-fr="Mobilité">Mobility</h2>
-    <p data-en="YOUR TEXT HERE in English." data-fr="VOTRE TEXTE ICI en français.">YOUR TEXT HERE in English.</p>
-  </section>
+    <canvas
+      id="snakeCanvas"
+      width="480"
+      height="300"
+      aria-label="Animation du jeu Snake"
+    ></canvas>
 
-  <section id="careers">
-    <h2 data-en="Careers" data-fr="Carrière">Careers</h2>
-    <p data-en="YOUR TEXT HERE in English." data-fr="VOTRE TEXTE ICI en français.">YOUR TEXT HERE in English.</p>
-  </section>
+    <p class="note">
+      Animation du serpent se dirigeant vers la pomme.
+    </p>
+  </div>
 
-  <section id="sports">
-    <h2 data-en="Sports and interests" data-fr="Sports et centres d'intérêt">Sports and interests</h2>
-    <p data-en="Outside my studies, here is what I enjoy:" data-fr="En dehors de mes études, voici ce que j'aime :">Outside my studies, here is what I enjoy:</p>
-    <ul>
-      <li data-en="Sport" data-fr="Sport">Sport</li>
-      <li data-en="Travel" data-fr="Voyage">Travel</li>
-      <li data-en="Reading" data-fr="Lecture">Reading</li>
-      <li data-en="Televised debates" data-fr="Débats télévisés">Televised debates</li>
-    </ul>
-  </section>
+  <h3>Compétences techniques</h3>
 
-  <script>
-    var currentLang = 'en';
-
-    function show(id, btn) {
-      document.querySelectorAll('section').forEach(function (s) { s.classList.remove('active'); });
-      document.querySelectorAll('nav button').forEach(function (b) { b.classList.remove('active'); });
-      document.getElementById(id).classList.add('active');
-      btn.classList.add('active');
-    }
-
-    function toggleLang() {
-      currentLang = (currentLang === 'en') ? 'fr' : 'en';
-      document.documentElement.lang = currentLang;
-      document.querySelectorAll('[data-en]').forEach(function (el) {
-        el.textContent = el.getAttribute('data-' + currentLang);
-      });
-      document.getElementById('langBtn').textContent = (currentLang === 'en') ? 'FR' : 'EN';
-    }
-  </script>
-
-</body>
-</html>
+  <ul>
+    <li>
+      Automatismes industriels : programmation en Ladder
+      (LD) et FBD ; analyse de cahiers des charges.
+    </li>
+    <li>Modélisation et simulation sous MATLAB/Simulink.</li>
+    <li>
+      Commande des systèmes : fonctions de transfert,
+      diagrammes de Bode et stabilité.
+    </li>
+  </ul>
+</section>
