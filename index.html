@@ -148,6 +148,16 @@ ul { padding-left: 22px; }
   margin: 5px 10px 5px 0;
   color: var(--blue);
 }
+.linkedin-link {
+  display: block;
+  width: fit-content;
+  margin: 20px auto;
+}
+.linkedin-link svg {
+  display: block;
+}
+.linkedin-link:hover { opacity: .8; }
+
 #snakeCanvas {
   display: block;
   width: 100%;
@@ -191,7 +201,7 @@ footer { text-align: center; color: #666; padding: 20px; }
   </p>
 </header>
 
-<nav aria-label="Navigation principale">
+<nav aria-label="Main navigation">
   <button class="active" onclick="showSection('welcome', this)"
     data-en="Welcome" data-fr="Accueil">Accueil</button>
   <button onclick="showSection('projects', this)"
@@ -211,7 +221,6 @@ footer { text-align: center; color: #666; padding: 20px; }
 
 <main>
 
-<!-- ACCUEIL -->
 <section id="welcome" class="active">
   <h2 data-en="Welcome" data-fr="Accueil">Accueil</h2>
   <div class="profile-intro">
@@ -235,11 +244,10 @@ footer { text-align: center; color: #666; padding: 20px; }
   <h3 data-en="Video presentation" data-fr="Présentation vidéo">Présentation vidéo</h3>
   <video controls width="100%" style="max-width:650px">
     <source src="./presentation-english.mp4" type="video/mp4">
-    Votre navigateur ne peut pas lire cette vidéo.
+    Your browser cannot play this video.
   </video>
 </section>
 
-<!-- PROJETS D’INGÉNIERIE -->
 <section id="projects">
   <h2 data-en="Engineering projects and skills" data-fr="Projets d’ingénierie et compétences">Projets d’ingénierie et compétences</h2>
 
@@ -292,42 +300,73 @@ footer { text-align: center; color: #666; padding: 20px; }
 
   <h3 data-en="Technical skills" data-fr="Compétences techniques">Compétences techniques</h3>
   <ul>
-    <li>Automatismes industriels : programmation en Ladder (LD) et FBD ; analyse de cahiers des charges.</li>
-    <li>Modélisation et simulation sous MATLAB/Simulink.</li>
-    <li>Commande des systèmes : fonctions de transfert, diagrammes de Bode et stabilité.</li>
-    <li>Électronique et systèmes embarqués avec Proteus et LTspice.</li>
-    <li>Microcontrôleurs PIC avec MPLAB (C/assembleur), maintenance électrique et dépannage.</li>
-    <li>Appareils de mesure : multimètre, pince ampèremétrique et ampèremètre.</li>
+    <li data-en="Industrial automation: Ladder (LD) and FBD programming; requirements specification analysis." data-fr="Automatismes industriels : programmation en Ladder (LD) et FBD ; analyse de cahiers des charges.">Automatismes industriels : programmation en Ladder (LD) et FBD ; analyse de cahiers des charges.</li>
+    <li data-en="Modelling and simulation with MATLAB/Simulink." data-fr="Modélisation et simulation sous MATLAB/Simulink.">Modélisation et simulation sous MATLAB/Simulink.</li>
+    <li data-en="Control systems: transfer functions, Bode plots and stability." data-fr="Commande des systèmes : fonctions de transfert, diagrammes de Bode et stabilité.">Commande des systèmes : fonctions de transfert, diagrammes de Bode et stabilité.</li>
+    <li data-en="Electronics and embedded systems with Proteus and LTspice." data-fr="Électronique et systèmes embarqués avec Proteus et LTspice.">Électronique et systèmes embarqués avec Proteus et LTspice.</li>
+    <li data-en="PIC microcontrollers with MPLAB (C/assembly), electrical maintenance and troubleshooting." data-fr="Microcontrôleurs PIC avec MPLAB (C/assembleur), maintenance électrique et dépannage.">Microcontrôleurs PIC avec MPLAB (C/assembleur), maintenance électrique et dépannage.</li>
+    <li data-en="Measuring instruments: multimeter, clamp meter and ammeter." data-fr="Appareils de mesure : multimètre, pince ampèremétrique et ampèremètre.">Appareils de mesure : multimètre, pince ampèremétrique et ampèremètre.</li>
   </ul>
+
   <div class="skills">
-    <div><h4>Logiciels</h4><ul><li>Proteus</li><li>Zelio Soft</li><li>LTspice</li><li>MATLAB / Simulink</li><li>MPLAB</li></ul></div>
-    <div><h4>Matériel</h4><ul><li>Arduino</li><li>PicoScope</li><li>Multimètre et pince</li></ul></div>
-    <div><h4>Outils bureautiques</h4><ul><li>Word</li><li>Excel</li><li>Canva</li><li>PowerPoint</li></ul></div>
+    <div>
+      <h4 data-en="Software" data-fr="Logiciels">Logiciels</h4>
+      <ul><li>Proteus</li><li>Zelio Soft</li><li>LTspice</li><li>MATLAB / Simulink</li><li>MPLAB</li></ul>
+    </div>
+    <div>
+      <h4 data-en="Hardware" data-fr="Matériel">Matériel</h4>
+      <ul>
+        <li>Arduino</li><li>PicoScope</li>
+        <li data-en="Multimeter and clamp meter" data-fr="Multimètre et pince">Multimètre et pince</li>
+      </ul>
+    </div>
+    <div>
+      <h4 data-en="Office tools" data-fr="Outils bureautiques">Outils bureautiques</h4>
+      <ul><li>Word</li><li>Excel</li><li>Canva</li><li>PowerPoint</li></ul>
+    </div>
   </div>
 </section>
 
-<!-- CARRIÈRE -->
 <section id="careers">
-  <h2>Carrière et expériences professionnelles</h2>
-  <h3>METAL AFRIQUE — Stage en maintenance électrotechnique</h3>
-  <p><em>Septembre–octobre 2024</em></p>
-  <p>Lors de mon stage chez METAL AFRIQUE, j’ai découvert concrètement la maintenance électrotechnique et les installations électriques. J’ai participé au câblage d’armoires électriques, au dépannage d’équipements et au diagnostic de pannes. J’ai également travaillé sur la lecture de schémas électriques, la maintenance préventive et corrective, les tests et la mise en service. Cette expérience m’a permis d’appliquer mes connaissances théoriques sur le terrain et de développer une approche rigoureuse des interventions.</p>
-  <h3>ALDI — Employé polyvalent, Toulouse</h3>
-  <p><em>Depuis février 2026</em></p>
-  <p>Mon poste chez ALDI exige de l’organisation, de la réactivité et un sens des responsabilités. Mes missions comprennent l’encaissement, la mise en rayon, l’entretien du magasin et le respect des règles d’hygiène et de sécurité. Cette expérience développe mon autonomie, mon sens de l’organisation et mon sens du service.</p>
-  <h3>Perspectives professionnelles</h3>
-  <p>Actuellement en première année de formation d’ingénieur en Électronique, Énergie électrique et Automatique, je recherche des opportunités de stage ou d’alternance pour mettre en pratique les connaissances acquises. Je m’intéresse particulièrement à l’énergie électrique, à l’électrotechnique, à la modélisation et à la simulation des systèmes, ainsi qu’à l’automatique.</p>
+  <h2 data-en="Career and professional experience" data-fr="Carrière et expériences professionnelles">Carrière et expériences professionnelles</h2>
+
+  <h3 data-en="METAL AFRIQUE — Electrical maintenance internship" data-fr="METAL AFRIQUE — Stage en maintenance électrotechnique">METAL AFRIQUE — Stage en maintenance électrotechnique</h3>
+  <p><em data-en="September–October 2024" data-fr="Septembre–octobre 2024">Septembre–octobre 2024</em></p>
+  <p data-en="During my internship at METAL AFRIQUE, I gained practical experience in electrical maintenance and installations. I took part in wiring electrical cabinets, troubleshooting equipment and diagnosing faults. I also worked on reading electrical diagrams, preventive and corrective maintenance, testing and commissioning. This experience allowed me to apply my theoretical knowledge in the field and develop a rigorous approach to technical work."
+     data-fr="Lors de mon stage chez METAL AFRIQUE, j’ai découvert concrètement la maintenance électrotechnique et les installations électriques. J’ai participé au câblage d’armoires électriques, au dépannage d’équipements et au diagnostic de pannes. J’ai également travaillé sur la lecture de schémas électriques, la maintenance préventive et corrective, les tests et la mise en service. Cette expérience m’a permis d’appliquer mes connaissances théoriques sur le terrain et de développer une approche rigoureuse des interventions.">
+    Lors de mon stage chez METAL AFRIQUE, j’ai découvert concrètement la maintenance électrotechnique et les installations électriques. J’ai participé au câblage d’armoires électriques, au dépannage d’équipements et au diagnostic de pannes. J’ai également travaillé sur la lecture de schémas électriques, la maintenance préventive et corrective, les tests et la mise en service. Cette expérience m’a permis d’appliquer mes connaissances théoriques sur le terrain et de développer une approche rigoureuse des interventions.
+  </p>
+
+  <h3 data-en="ALDI — Store assistant, Toulouse" data-fr="ALDI — Employé polyvalent, Toulouse">ALDI — Employé polyvalent, Toulouse</h3>
+  <p><em data-en="Since February 2026" data-fr="Depuis février 2026">Depuis février 2026</em></p>
+  <p data-en="My position at ALDI requires organisation, responsiveness and a strong sense of responsibility. My duties include operating the checkout, restocking shelves, maintaining the store and following hygiene and safety rules. This experience is developing my independence, organisational skills and customer-service mindset."
+     data-fr="Mon poste chez ALDI exige de l’organisation, de la réactivité et un sens des responsabilités. Mes missions comprennent l’encaissement, la mise en rayon, l’entretien du magasin et le respect des règles d’hygiène et de sécurité. Cette expérience développe mon autonomie, mon sens de l’organisation et mon sens du service.">
+    Mon poste chez ALDI exige de l’organisation, de la réactivité et un sens des responsabilités. Mes missions comprennent l’encaissement, la mise en rayon, l’entretien du magasin et le respect des règles d’hygiène et de sécurité. Cette expérience développe mon autonomie, mon sens de l’organisation et mon sens du service.
+  </p>
+
+  <h3 data-en="Career goals" data-fr="Perspectives professionnelles">Perspectives professionnelles</h3>
+  <p data-en="I am currently in the first year of an engineering programme in Electronics, Electrical Energy and Automatic Control. I am looking for internship or work-study opportunities to apply my knowledge. I am particularly interested in electrical energy, electrical engineering, system modelling and simulation, and automatic control."
+     data-fr="Actuellement en première année de formation d’ingénieur en Électronique, Énergie électrique et Automatique, je recherche des opportunités de stage ou d’alternance pour mettre en pratique les connaissances acquises. Je m’intéresse particulièrement à l’énergie électrique, à l’électrotechnique, à la modélisation et à la simulation des systèmes, ainsi qu’à l’automatique.">
+    Actuellement en première année de formation d’ingénieur en Électronique, Énergie électrique et Automatique, je recherche des opportunités de stage ou d’alternance pour mettre en pratique les connaissances acquises. Je m’intéresse particulièrement à l’énergie électrique, à l’électrotechnique, à la modélisation et à la simulation des systèmes, ainsi qu’à l’automatique.
+  </p>
 </section>
 
-<!-- MOBILITÉ INTERNATIONALE -->
 <section id="mobility">
-  <h2>Mobilité internationale — Canada</h2>
-  <p>C’est au Sénégal qu’est née ma passion pour l’énergie électrique. J’y ai obtenu un BTS en électrotechnique, puis j’ai poursuivi mes études en France. Ce parcours a renforcé mon envie de développer mes compétences techniques et d’approfondir mes connaissances.</p>
-  <p>Je souhaite aujourd’hui effectuer une mobilité internationale au Canada. Mon objectif principal est de renforcer mes compétences techniques, d’enrichir mes connaissances en énergie électrique et de découvrir de nouvelles technologies ainsi que de nouvelles pratiques professionnelles.</p>
-  <p>Cette expérience me permettrait aussi de découvrir un nouvel environnement culturel et académique, de rencontrer des personnes issues d’horizons différents et d’apprendre d’autres méthodes de travail. Je souhaite également améliorer mon anglais professionnel, en particulier ma capacité à communiquer, à collaborer et à échanger sur des sujets techniques dans un contexte international.</p>
+  <h2 data-en="International mobility — Canada" data-fr="Mobilité internationale — Canada">Mobilité internationale — Canada</h2>
+  <p data-en="My passion for electrical energy began in Senegal, where I earned a BTS in Electrotechnics before continuing my studies in France. This journey strengthened my desire to develop my technical skills and deepen my knowledge."
+     data-fr="C’est au Sénégal qu’est née ma passion pour l’énergie électrique. J’y ai obtenu un BTS en électrotechnique, puis j’ai poursuivi mes études en France. Ce parcours a renforcé mon envie de développer mes compétences techniques et d’approfondir mes connaissances.">
+    C’est au Sénégal qu’est née ma passion pour l’énergie électrique. J’y ai obtenu un BTS en électrotechnique, puis j’ai poursuivi mes études en France. Ce parcours a renforcé mon envie de développer mes compétences techniques et d’approfondir mes connaissances.
+  </p>
+  <p data-en="I would now like to undertake an international mobility experience in Canada. My main goal is to strengthen my technical skills, expand my knowledge of electrical energy, and discover new technologies and professional practices."
+     data-fr="Je souhaite aujourd’hui effectuer une mobilité internationale au Canada. Mon objectif principal est de renforcer mes compétences techniques, d’enrichir mes connaissances en énergie électrique et de découvrir de nouvelles technologies ainsi que de nouvelles pratiques professionnelles.">
+    Je souhaite aujourd’hui effectuer une mobilité internationale au Canada. Mon objectif principal est de renforcer mes compétences techniques, d’enrichir mes connaissances en énergie électrique et de découvrir de nouvelles technologies ainsi que de nouvelles pratiques professionnelles.
+  </p>
+  <p data-en="This experience would also allow me to discover a new cultural and academic environment, meet people from different backgrounds and learn new ways of working. I also want to improve my professional English, particularly my ability to communicate, collaborate and discuss technical topics in an international setting."
+     data-fr="Cette expérience me permettrait aussi de découvrir un nouvel environnement culturel et académique, de rencontrer des personnes issues d’horizons différents et d’apprendre d’autres méthodes de travail. Je souhaite également améliorer mon anglais professionnel, en particulier ma capacité à communiquer, à collaborer et à échanger sur des sujets techniques dans un contexte international.">
+    Cette expérience me permettrait aussi de découvrir un nouvel environnement culturel et académique, de rencontrer des personnes issues d’horizons différents et d’apprendre d’autres méthodes de travail. Je souhaite également améliorer mon anglais professionnel, en particulier ma capacité à communiquer, à collaborer et à échanger sur des sujets techniques dans un contexte international.
+  </p>
 </section>
 
-<!-- ENGAGEMENT CITOYEN : PHOTOS CORRIGÉES -->
 <section id="civic">
   <h2 data-en="Civic engagement" data-fr="Engagement citoyen">Engagement citoyen</h2>
 
@@ -366,68 +405,98 @@ footer { text-align: center; color: #666; padding: 20px; }
   </div>
 
   <div class="activity">
-    <h3>Journée Futur Proche</h3>
-    <p>J’ai participé à la journée Futur Proche à l’Université de Toulouse, avec des conférences et des sessions abordant notamment les ressources du campus et l’éthique en ingénierie. Ces échanges m’ont amené à réfléchir aux enjeux environnementaux, à l’utilisation responsable des ressources et aux responsabilités éthiques des futurs ingénieurs.</p>
+    <h3 data-en="Futur Proche Day" data-fr="Journée Futur Proche">Journée Futur Proche</h3>
+    <p data-en="I took part in Futur Proche Day at the University of Toulouse, with talks and sessions covering topics such as campus resources and ethics in engineering. These discussions encouraged me to reflect on environmental challenges, the responsible use of resources and the ethical responsibilities of future engineers."
+       data-fr="J’ai participé à la journée Futur Proche à l’Université de Toulouse, avec des conférences et des sessions abordant notamment les ressources du campus et l’éthique en ingénierie. Ces échanges m’ont amené à réfléchir aux enjeux environnementaux, à l’utilisation responsable des ressources et aux responsabilités éthiques des futurs ingénieurs.">
+      J’ai participé à la journée Futur Proche à l’Université de Toulouse, avec des conférences et des sessions abordant notamment les ressources du campus et l’éthique en ingénierie. Ces échanges m’ont amené à réfléchir aux enjeux environnementaux, à l’utilisation responsable des ressources et aux responsabilités éthiques des futurs ingénieurs.
+    </p>
   </div>
 
   <div class="activity">
-    <h3>Représentation des élèves et étudiants de Diogo</h3>
-    <p>J’ai été invité à participer à une visite de terrain organisée à l’occasion du déplacement du ministre de l’Énergie, en tant que représentant des élèves et étudiants de ma commune. Cette visite m’a permis de découvrir des entreprises du secteur énergétique et de mieux comprendre certaines réalités du milieu professionnel.</p>
+    <h3 data-en="Representing Diogo's pupils and students" data-fr="Représentation des élèves et étudiants de Diogo">Représentation des élèves et étudiants de Diogo</h3>
+    <p data-en="I was invited to take part in a field visit organised during the Energy Minister's visit, representing the pupils and students of my municipality. This visit gave me the opportunity to discover companies in the energy sector and gain a better understanding of the professional environment."
+       data-fr="J’ai été invité à participer à une visite de terrain organisée à l’occasion du déplacement du ministre de l’Énergie, en tant que représentant des élèves et étudiants de ma commune. Cette visite m’a permis de découvrir des entreprises du secteur énergétique et de mieux comprendre certaines réalités du milieu professionnel.">
+      J’ai été invité à participer à une visite de terrain organisée à l’occasion du déplacement du ministre de l’Énergie, en tant que représentant des élèves et étudiants de ma commune. Cette visite m’a permis de découvrir des entreprises du secteur énergétique et de mieux comprendre certaines réalités du milieu professionnel.
+    </p>
     <div class="activity-gallery">
       <img src="./visite-energie.jpg" alt="Visite de terrain dans le secteur de l’énergie" loading="lazy">
     </div>
   </div>
 </section>
 
-<!-- SPORTS ET AUTRES ACTIVITÉS -->
 <section id="sports">
-  <h2>Sports et autres activités</h2>
-  <h3>Football</h3>
-  <p>Le football est l’un de mes sports préférés. Il me permet de rester actif, de développer mon esprit d’équipe et de partager des moments de plaisir avec les autres.</p>
-  <h3>Lecture et débats télévisés</h3>
-  <p>J’aime la lecture et les débats télévisés. Ces activités me permettent d’élargir mes connaissances, de découvrir différents points de vue et de développer mon esprit critique.</p>
-  <h3>Voyages</h3>
-  <p>J’aime voyager, car cela me donne l’occasion de découvrir de nouveaux endroits, d’apprendre à connaître différentes cultures et d’élargir ma vision du monde.</p>
-  <h3>Cinéma</h3>
-  <p>J’aime le cinéma, car il me permet de découvrir différentes histoires, d’explorer de nouveaux points de vue et d’en apprendre davantage sur différentes cultures.</p>
+  <h2 data-en="Sports and other activities" data-fr="Sports et autres activités">Sports et autres activités</h2>
+
+  <h3 data-en="Football" data-fr="Football">Football</h3>
+  <p data-en="Football is one of my favourite sports. It helps me stay active, develop teamwork and share enjoyable moments with others."
+     data-fr="Le football est l’un de mes sports préférés. Il me permet de rester actif, de développer mon esprit d’équipe et de partager des moments de plaisir avec les autres.">
+    Le football est l’un de mes sports préférés. Il me permet de rester actif, de développer mon esprit d’équipe et de partager des moments de plaisir avec les autres.
+  </p>
+
+  <h3 data-en="Reading and television debates" data-fr="Lecture et débats télévisés">Lecture et débats télévisés</h3>
+  <p data-en="I enjoy reading and watching television debates. These activities allow me to broaden my knowledge, discover different points of view and develop my critical thinking."
+     data-fr="J’aime la lecture et les débats télévisés. Ces activités me permettent d’élargir mes connaissances, de découvrir différents points de vue et de développer mon esprit critique.">
+    J’aime la lecture et les débats télévisés. Ces activités me permettent d’élargir mes connaissances, de découvrir différents points de vue et de développer mon esprit critique.
+  </p>
+
+  <h3 data-en="Travelling" data-fr="Voyages">Voyages</h3>
+  <p data-en="I enjoy travelling because it gives me the opportunity to discover new places, learn about different cultures and broaden my view of the world."
+     data-fr="J’aime voyager, car cela me donne l’occasion de découvrir de nouveaux endroits, d’apprendre à connaître différentes cultures et d’élargir ma vision du monde.">
+    J’aime voyager, car cela me donne l’occasion de découvrir de nouveaux endroits, d’apprendre à connaître différentes cultures et d’élargir ma vision du monde.
+  </p>
+
+  <h3 data-en="Cinema" data-fr="Cinéma">Cinéma</h3>
+  <p data-en="I enjoy cinema because it allows me to discover different stories, explore new perspectives and learn more about different cultures."
+     data-fr="J’aime le cinéma, car il me permet de découvrir différentes histoires, d’explorer de nouveaux points de vue et d’en apprendre davantage sur différentes cultures.">
+    J’aime le cinéma, car il me permet de découvrir différentes histoires, d’explorer de nouveaux points de vue et d’en apprendre davantage sur différentes cultures.
+  </p>
 </section>
 
-<!-- CV ET CONTACT -->
 <section id="contact">
-  <h2>CV et contact</h2>
-  <div class="links">
-    <a href="./CV_FR.pdf" target="_blank" rel="noopener">CV français (CV_FR.pdf)</a>
-    <a href="./Resume_EN.pdf" target="_blank" rel="noopener">English résumé (Resume_EN.pdf)</a>
-   
-<a href="https://www.linkedin.com/in/ibrahima-thioune-6834a4302/"
-   target="_blank"
-   rel="noopener noreferrer"
-   aria-label="Visiter mon profil LinkedIn"
-   title="Mon profil LinkedIn"
-   style="display:inline-block; margin:20px;">
-  <svg xmlns="http://www.w3.org/2000/svg"
-       width="42" height="42"
-       viewBox="0 0 24 24"
-       role="img"
-       aria-label="LinkedIn">
-    <path fill="#0A66C2"
-      d="M20.45 2H3.55C2.69 2 2 2.68 2 3.53v16.94c0 .85.69 1.53 1.55 1.53h16.9c.86 0 1.55-.68 1.55-1.53V3.53C22 2.68 21.31 2 20.45 2ZM8 18H5V9h3v9ZM6.5 7.73a1.74 1.74 0 1 1 0-3.48 1.74 1.74 0 0 1 0 3.48ZM19 18h-3v-4.38c0-1.05-.02-2.4-1.46-2.4-1.47 0-1.69 1.14-1.69 2.32V18h-3V9h2.88v1.23h.04a3.16 3.16 0 0 1 2.84-1.56C18.65 8.67 19 10.67 19 13.27V18Z"/>
-  </svg>
-</a>
+  <h2 data-en="CV and contact" data-fr="CV et contact">CV et contact</h2>
 
-    <a href="mailto:thiouneibrahima32@gmail.com">thiouneibrahima32@gmail.com</a>
+  <div class="links">
+    <a href="./CV_FR.pdf" target="_blank" rel="noopener"
+       data-en="French CV (CV_FR.pdf)" data-fr="CV français (CV_FR.pdf)">CV français (CV_FR.pdf)</a>
+
+    <a href="./Resume_EN.pdf" target="_blank" rel="noopener"
+       data-en="English résumé (Resume_EN.pdf)" data-fr="CV anglais (Resume_EN.pdf)">CV anglais (Resume_EN.pdf)</a>
   </div>
-  <h3>Langues</h3>
+
+  <a class="linkedin-link"
+     href="https://www.linkedin.com/in/ibrahima-thioune-6834a4302/"
+     target="_blank"
+     rel="noopener noreferrer"
+     aria-label="Visiter mon profil LinkedIn"
+     title="Mon profil LinkedIn">
+    <svg xmlns="http://www.w3.org/2000/svg"
+         width="42" height="42"
+         viewBox="0 0 24 24"
+         role="img"
+         aria-label="LinkedIn">
+      <path fill="#0A66C2"
+        d="M20.45 2H3.55C2.69 2 2 2.68 2 3.53v16.94c0 .85.69 1.53 1.55 1.53h16.9c.86 0 1.55-.68 1.55-1.53V3.53C22 2.68 21.31 2 20.45 2ZM8 18H5V9h3v9ZM6.5 7.73a1.74 1.74 0 1 1 0-3.48 1.74 1.74 0 0 1 0 3.48ZM19 18h-3v-4.38c0-1.05-.02-2.4-1.46-2.4-1.47 0-1.69 1.14-1.69 2.32V18h-3V9h2.88v1.23h.04a3.16 3.16 0 0 1 2.84-1.56C18.65 8.67 19 10.67 19 13.27V18Z"/>
+    </svg>
+  </a>
+
+  <p>
+    <a href="mailto:thiouneibrahima32@gmail.com">thiouneibrahima32@gmail.com</a>
+  </p>
+
+  <h3 data-en="Languages" data-fr="Langues">Langues</h3>
   <ul>
-    <li>Français</li>
+    <li data-en="French" data-fr="Français">Français</li>
     <li>Wolof</li>
-    <li>Anglais</li>
+    <li data-en="English" data-fr="Anglais">Anglais</li>
   </ul>
 </section>
 
 </main>
 
-<footer>© Ibrahima Thioune — E-portfolio</footer>
+<footer data-en="© Ibrahima Thioune — E-portfolio"
+        data-fr="© Ibrahima Thioune — E-portfolio">
+  © Ibrahima Thioune — E-portfolio
+</footer>
 
 <script>
 let currentLang = "fr";
@@ -439,6 +508,7 @@ function showSection(id, btn) {
   document.querySelectorAll("main > section").forEach(s => {
     s.classList.remove("active");
   });
+
   document.querySelectorAll("nav button:not(.lang)").forEach(b => {
     b.classList.remove("active");
   });
@@ -473,13 +543,18 @@ function toggleLang() {
   function randomApple() {
     let p;
     do {
-      p = {x:Math.floor(Math.random()*cols), y:Math.floor(Math.random()*rows)};
+      p = {
+        x: Math.floor(Math.random() * cols),
+        y: Math.floor(Math.random() * rows)
+      };
     } while (snake.some(s => s.x === p.x && s.y === p.y));
     apple = p;
   }
 
   function pathToApple() {
-    const dirs = [{x:1,y:0},{x:0,y:1},{x:-1,y:0},{x:0,y:-1}];
+    const dirs = [
+      {x:1,y:0},{x:0,y:1},{x:-1,y:0},{x:0,y:-1}
+    ];
     const key = p => p.x + "," + p.y;
     const queue = [snake[0]], prev = new Map();
     prev.set(key(snake[0]), null);
@@ -490,8 +565,9 @@ function toggleLang() {
 
       for (const d of dirs) {
         const n = {x:p.x+d.x,y:p.y+d.y};
-        if (n.x<0 || n.x>=cols || n.y<0 || n.y>=rows) continue;
-        if (snake.slice(0,-1).some(s => s.x===n.x && s.y===n.y)) continue;
+        if (n.x < 0 || n.x >= cols || n.y < 0 || n.y >= rows) continue;
+        if (snake.slice(0,-1).some(s => s.x === n.x && s.y === n.y)) continue;
+
         if (!prev.has(key(n))) {
           prev.set(key(n), key(p));
           queue.push(n);
@@ -502,6 +578,7 @@ function toggleLang() {
     let k = key(apple);
     if (!prev.has(k)) return null;
     const route = [];
+
     while (prev.get(k) !== null) {
       const [x,y] = k.split(",").map(Number);
       route.unshift({x,y});
@@ -521,7 +598,7 @@ function toggleLang() {
     ctx.fill();
 
     snake.forEach((s,i) => {
-      ctx.fillStyle = i===0 ? "#166534" : "#22a447";
+      ctx.fillStyle = i === 0 ? "#166534" : "#22a447";
       ctx.fillRect(s.x*cell+1, s.y*cell+1, cell-2, cell-2);
     });
 
@@ -538,10 +615,17 @@ function toggleLang() {
     if (route && route.length) {
       next = route[0];
     } else {
-      const dirs = [{x:1,y:0},{x:0,y:1},{x:-1,y:0},{x:0,y:-1}];
-      next = dirs.map(d => ({x:snake[0].x+d.x,y:snake[0].y+d.y}))
-        .find(n => n.x>=0 && n.x<cols && n.y>=0 && n.y<rows &&
-          !snake.slice(0,-1).some(s => s.x===n.x && s.y===n.y));
+      const dirs = [
+        {x:1,y:0},{x:0,y:1},{x:-1,y:0},{x:0,y:-1}
+      ];
+      next = dirs.map(d => ({
+        x: snake[0].x+d.x,
+        y: snake[0].y+d.y
+      })).find(n =>
+        n.x >= 0 && n.x < cols &&
+        n.y >= 0 && n.y < rows &&
+        !snake.slice(0,-1).some(s => s.x === n.x && s.y === n.y)
+      );
 
       if (!next) {
         snake = [{x:5,y:7},{x:4,y:7},{x:3,y:7}];
@@ -551,7 +635,7 @@ function toggleLang() {
       }
     }
 
-    const ate = next.x===apple.x && next.y===apple.y;
+    const ate = next.x === apple.x && next.y === apple.y;
     snake.unshift(next);
     if (!ate) snake.pop();
     else randomApple();
